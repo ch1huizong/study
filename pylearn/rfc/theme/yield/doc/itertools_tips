@@ -1,0 +1,57 @@
+一、itertools模块
+	序列->
+        islice			切片, 无界序列
+
+        takewhile  
+		dropwhile		条件切片, 无界序列
+
+        count([n])		序列,无界
+        cycle			反复循环，无界
+        repeat			重复生成对象obj
+
+		
+		chain			连接多个迭代器为一个
+		tee				复制，返回同一个迭代器的多个副本(列表、线程安全)
+
+
+    排列->
+        product			笛卡尔积,配对,多个迭代器里的项目
+
+        combinations    联合
+        permutations    数学里的排列组合
+    
+
+    操作->
+        ifilter
+        ifilterfalse
+
+        imap / starmap(元组序列)
+
+        izip			返回迭代器,短
+        izip_longest 
+
+        groupby (key1, group1)...
+
+
+二、heapq模块
+
+    heapify 
+	heappop, heappush, heappushpop, heapreplace, 
+	merge, nlargest, nsmallest
+
+    functools模块: partial, reduce, wraps, update_wrapper
+
+
+三、其他
+
+    并行处理可迭代对象：zip, map(None,seq1,seq2...)
+
+    operator.itemgetter	    索引	
+            .attrgetter     偏函
+            .methodcaller
+    
+四、应用
+
+	迭代器： yield生成器、生成器表达式
+
+	生成器表达式特别适合作为类似SQL的查询

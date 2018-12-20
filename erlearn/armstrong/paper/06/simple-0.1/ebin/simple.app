@@ -1,0 +1,12 @@
+{application,simple,
+             [{description,"A simple application"},
+              {vsn,"0.0.1"},
+              {modules,[kv,packet_assembler,simple_app,simple_logger,
+                        simple_sup]},
+              {maxT,infinity},
+              {registered,[kv,my_simple_event_logger,
+                           my_simple_packet_assembler]},
+              {applications,[kernel,stdlib]},
+              {included_applications,[]},
+              {env,[]},
+              {mod,{simple_app,start}}]}.

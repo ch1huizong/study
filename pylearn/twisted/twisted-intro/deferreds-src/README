@@ -1,0 +1,27 @@
+The source in this directory was used as examples in the talk Deferred
+Gratification by Terry Jones on July 21, 2010 at EuroPython, in Birmingham.
+
+Some of the code:
+
+  deferredLock.py
+  deferredQueue.py
+  succeed.py
+
+is simplified versions of what can be found in
+twisted/internet/defer.py in the Twisted distribution, and is intended only
+to illustrate certain aspects (simplicity, beauty) of Twisted.
+
+Other files:
+
+  deferredPooler.py
+  deferredPoolerExample.py
+  deferredPoolerTest.py
+  rdq.py
+  retryingCall.py
+  tee.py
+
+contain code used in production by Fluidinfo Inc., in part in their FluidDB
+product (http://fluidinfo.com), and in part in Tickery (running at
+http://tickery.net with source at http://github.com/fluidinfo/Tickery).
+
+For more information, please contact info@fluidinfo.com

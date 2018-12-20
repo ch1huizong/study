@@ -1,0 +1,142 @@
+
+一. 定义
+
+	1.class 类变量，方法，特性， 实例属性
+
+
+	2.静态方法和类方法：
+
+		1.静态方法@staticmethod：	可以多种方式生成实例;
+
+
+		2.类方法@classmethod：		cls作为第一个参数传递，可以利用cls的属性
+
+
+		3.实例方法： 在实例的属性上进行操作；
+
+
+		共同点： 与实例函数处于同一空间，可以被实例调用
+
+		
+		4.@property设置方法为特性，并可以拦截通过特性的@setter/@deleter操作
+
+
+		5.类中定义的__attr属性会自动变名(当作私有属性)，可以防止被子类覆盖;
+
+
+		  _method 可以阻止通过from m import *导出名称;
+		  类定义了__del__方法 1.不会垃圾回收2. 容易导致循环引用
+
+
+	3. 
+		实例创建(二步)：
+			1. __new__(cls, *args, **kwargs)			创建类实例但并不初始化
+			2. __init__(self, *args, **kwargs)			初始化实例
+
+		自定义__new__场景： 
+			1.继承不可变对象; 
+			2.元类
+
+		区分instance.__dict__和class.__dict__(都是内部实现), 附加模块字典m.__dict__
+
+		__slots__(实例属性): 属性名称隔离安全、内部数组实现实例
+
+
+	4. class语句背后的秘密(元类)
+		
+		1. 寻找元类
+			a.  在类中显式制定元类  __metaclass__ = type
+			b. 若没显示指定，class 会检查基类元组第一个条目，并把它的类型作为元类
+			c．没有指定基类，检查全局变量__metaclass__是否存在
+			d.没有找到任何的__metaclass__，使用默认的原类(type)
+
+		2. 自定义元类 
+			类的创建最后一步,也就是调用元类的type()步骤,这一部可以自定义(继承自type)
+			
+		3. 场景
+			a. 检测和收集类定义中的信息
+			b. 并修改信息, 重定义元类的__new__方法
+
+		4. 构造函数
+			type(class_name, bases, class_dict)		可以生成类
+
+
+
+二. 提纲
+	
+	类，实例，域，继承，静态/类方法，特性@property，
+
+	属性访问描述符（__set__,__get__,__delete__)?
+
+	私有属性，类型转换，抽象基类， 元类， 类装饰器
+
+
+
+三. 详情
+
+	1.super(class, self)
+	   
+		self参数必须，会调用基类的方法在实例上进行操作；
+
+
+		mix-class只是定义一些方法，并假设其他类中的方法存在，
+		以此为基础，会调用其他类中的方法,来新增一些特性。
+		基于MRO
+
+		class M(mix-class, A, B):pass
+
+
+	2.类实例a的内部实现
+
+		类的实例a在类内部以字典形式实现，通过a.__dict__可以访问这个字典,
+		对属性的set、get、del都会操作这个__dict__属性，可以通过重新定义
+		类的__getattr__、__setattr__、__delattr__来拦截对实例属性的访问(包装器、代理)
+
+		类也有类字典A.__dict__
+
+		属性查找:
+			查找obj.name,
+			首先调用对象的obj.__getattribute__("name"), 特性，
+			局部__dict__,类字典，搜索基类失败调用类的__getattr__方法
+
+
+	3.抽象基类(容器):将对象组织到层次结构中，对象分组
+		class Foo:
+			__metaclass__ = ABCMeta
+
+			@abstractmethod
+			def spam(self,a,b)
+				pass
+			@abstractproperty
+			def name(self):
+				pass
+
+		不能实例化，子类必须实现基类相应的方法，抽类类不会检查子类方法的相应参数
+
+		注册： Foo.register(Grok),只影响类型检查
+
+			
+
+	4.元类控制类的创建，就是知道如何创建和管理类的对象。
+		type也只是一种元类,最后一步调用形式Foo = type(cls_name, class_parents, class_dict(局部字典))
+		class_dict会保存类主体中定义的方法.
+
+
+		我们可以自定义元类，通常继承自type,改写__init__或__new__方法会改变用户定义的类的行为和语义
+		__new__同时检查和更改类定义的内容。
+
+
+		1.class DocMeta(type):pass
+
+		2.class Documented: 一般定义一基类
+			__metaclass__ = DocMeta
+
+		3.class Foo(Documented):pass, 继承
+			.
+			.
+			.
+		影响类创建的最后一步 Foo = DocMeta(cls_name, class_parents, class_dict)
+
+4. 类中访问方法或属性需要完全限定名称,即self.attr/A.attr
+
+5. 类属性访问mro问题, mix-in会（假设）调用其他类中的方法

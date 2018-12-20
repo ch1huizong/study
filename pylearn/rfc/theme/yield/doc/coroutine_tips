@@ -1,0 +1,51 @@
+
+1. 结构 
+
+	S(源) --> C --> C --> E(尾)
+
+	S: 生产			send 
+	C: 接收/生产	yield, send
+	E: 接收			yield
+
+
+2. 使用场景：
+
+	数据处理管道;
+
+	event-driven + coroutine;
+
+
+   线程进程部分需要再好好理解一下
+
+
+3. 操作系统取得控制权
+	a. 硬件中断
+	b. 陷阱（软中断） 低级的系统调用,eg. read函数
+
+
+4. 
+	主调度;
+	内部任务;
+		
+
+
+3.关于task部分：
+  每一个task遇到yield会暂停执行，并返回控制权给起调用者？为何？设计的问题？
+  yield语言设计的问题，如果你在task中加一个sock.recv的系统调用，就不会返回控制权
+
+4. value = (yield value)
+ 当开始调用next或send(None)时,函数提前到第一个yield处并发送value值出去。使协程运行
+ 必须第一次调用next或send(None)
+ 接下来再调用send会接触阻塞并跳到下一个yield处
+
+5.yield
+    yield 前面的语句相当于需求,可以安排; 次数或者无限循环?
+
+    trap两方面作用：1.使os获得控制权2.使用os提供的系统服务
+
+疑问：
+    是否真的需要自己控制一切调度？
+
+
+3.	while无限循环 + yield + select + socket + thread
+	yield 碰见io阻塞的问题？

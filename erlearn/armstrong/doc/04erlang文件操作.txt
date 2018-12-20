@@ -1,0 +1,35 @@
+
+一、模块
+    file        打开、关闭、读取、写入...
+    filename    文件名
+    filelib     file高级接口
+    io          已打开文件操作 
+    
+
+
+二、操作
+    
+    读取:
+        file:consult		读取所有类型
+
+        io:read(S,'')		分次读取文件里的数据类型 
+        io:get_line(S,'')	分次读取行 
+
+        file:read_file		读取整个文件到二进制型中 
+		file:read(S,Number)
+        file:pread(S,Start,Len)		随机访问 
+
+    写入：
+        io:format(S, Format, Args)
+
+
+		file:write
+        file:write_file/2	一次性写入整个文件,第二个参数IO列表，自动扁平化
+							IO列表：一个元素为IO列表、二进制型、或0-255整数的列表.
+        file:pwrite			随机写入文件
+
+		file:read_file_info , -include_lib("kernel/include/file.hrl").
+        
+    目录(file)： list_dir, make_dir, del_dir, copy, delete
+
+

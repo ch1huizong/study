@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}日志查看器 - 文件列表{% endblock %}
+
+{% block content %}
+<ul>
+	{% for f in file_list %}
+		<li><a href="/viewlog/host/{{ f }}">{{ f }}</a></li>
+	{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+一、模式
+
+    (?...)高级？ 
+
+二、函数
+    compile  标志:I M S  A L U X
+    escape(string) 转意
+
+    findall(pattern, string, flags), finditer
+    match, search
+    split
+    sub(pattern, rep1, string, count), subn  rep1可以函数(m为参数)或字符串
+
+三、匹配对象
+    m.expand(template) 返回template字符串
+    m.group([...]), m.groups(), m.groupdict()
+    ...
+    m.re, m.string  ---> r.flags, r.pattern
+    
+

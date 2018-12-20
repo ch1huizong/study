@@ -1,0 +1,20 @@
+1.载入路径
+	code: add_patha(Dir), add_pathz(Dir), all_loaded()
+	配置文件: .erlang(home), .erlang(workdir)
+
+2.三种运行方式
+	erlang shell;
+	escript, main(Args);
+	命令行: erl -noshell  -pa/pz Dir  -s Mod fun -s init stop   ,-eval VS(sh脚本)
+				-smp 启动SMP支持 -S N N个调度器
+
+	注意：函数内是如何获得命令行参数原子的
+
+3.其他
+	makefile文件;
+	自定义shell命令，user_default文件
+
+				
+4.动态代码载入
+
+    进程的主控代码,可以在内存中有两个不同版本;被调用代码的更改编译载入后会立即生效。

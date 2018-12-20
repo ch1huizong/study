@@ -1,0 +1,4 @@
+
+1.datetime对象
+	创建;
+	属性data, time;

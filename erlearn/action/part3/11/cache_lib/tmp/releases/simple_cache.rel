@@ -1,0 +1,13 @@
+{release,
+    {"simple_cache", "0.0.1"},
+    {erts, "6.2"},
+	[{kernel, "3.0.3"},
+	{stdlib, "2.2"},
+	{sasl, "2.4.1"},
+	{mnesia, "4.12.3"},
+	{resource_discovery, "0.0.1"},
+	{simple_cache, "0.0.3"},
+	{tcp_interface, "0.0.1"},
+	{http_interface, "0.0.1"},
+	{tcp_rpc, "0.0.1"} 
+]}.

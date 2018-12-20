@@ -1,0 +1,53 @@
+
+注意是:模块对象
+
+1.import spam  
+	a. 创建并导入新的命名空间
+	b. 执行spam里面的代码
+	c. 使名字spam指向模块
+
+	
+	from spam import foo 把foo导入当前的命名空间，不会改变定义foo裹携的环境(闭包)
+
+	as...
+	__all__
+
+	模块执行形式：1.import运行模块  2.主程序形式(命令行/程序名)，__main__
+
+2. 
+	改变模块搜索路径: 
+		sys.path.append(目录)		可以是目录， zip压缩文件, .egg文件(.zip+metainfo)
+
+	模块foo加载顺序：
+		1.目录foo,foo包
+		2.foo.so...已编译的扩展
+		3.foo.pyo(-O或--OO选项)优化版本
+		4.foo.pyc 字节码
+		5.foo.py
+
+		注意.pyc或.pyo仅仅import时才自动生成
+
+
+3.包系统： 
+	
+	1.两个概念: 1、包	2.模块
+	
+		包：目录名 + __init__.py文件（可包含__all__定义）,模块就是.py源文件
+
+	2. 导入
+		import 导入主要目标是fun/class对象或模块module 
+
+
+		a. 相对导入(用.或..)只能通过"from"语句，只能在一个"包中"使用 
+		"形式"from . import file或from ..Primitive import lines
+	
+		b. 单独导入import Graphics 不会导入包中包含的子模块，但会调用__init__
+		from Graphics(包).Primitive(包) import *不会导入Primitive包中的模块，除非P中指定__all__
+
+		c. import module会开始导入标准库
+
+	3. 包的分发和安装
+	python setup.py 命令
+	打包： python setup.py sdist
+	安装： python setup.py install
+	来源： setup函数来自distutils.core或者setuptools

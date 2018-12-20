@@ -1,0 +1,38 @@
+
+并发-> 利用操作系统的调度
+
+	多进程->	
+		消息、内存映射mmap
+
+	多线程->	
+		消息、共享内存
+		GIL造成任意时刻只允许单个python线程执行，浪费CPU.
+
+
+
+    p(t).Daemon = True
+    p/t/q.join()
+
+		
+进程间通信：
+	队列
+	管道  读端可以send()
+	进程池 
+	共享数组和共享值
+	连接
+	
+	托管对象(用时再研究)
+
+线程:threading
+		Thread
+		Timer
+
+		同步原语：
+			Lock
+			RLock       只能同一线程配对操作
+			
+			Semaphore   不同线程可以acquire和release操作
+			Event       事件 
+			Condition   条件变量,基于项目和锁
+
+		优先通信方式：队列Queue

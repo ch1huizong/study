@@ -1,0 +1,28 @@
+
+一、socket函数
+
+	1. 查找主机
+		gethostname 、gethostbyname 、gethostbyname_ex(可查多ip地址，负载均衡) 、
+		getfqdn 、 gethostbyaddr
+
+	2. 服务和端口号
+		getservbyname、getservbyport、
+		getprotobyname(获取分配给一个传输协议的端口号,协议码值)
+
+	3. 查找连接端信息
+		getaddrinfo    返回元组
+	
+	4. 网络地址转换
+		socket.inet_aton    字符串转换到二进制
+		socket.inet_pton    范围更大
+
+	5. socket.create_connection((host,port)) 简便方法
+
+	6. socket.socketpair()  建立一对套接字，用于父子进程间通信
+
+
+补充：urlparse.urlparse 和urlparse.urlunparse不错啊
+	  struct 模块
+	  binascii 模块
+	
+待研究：传送视频文件？

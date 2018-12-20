@@ -1,0 +1,8 @@
+
+1.getopt.getopt(sys.argv[1:],'a:bc',['withname=','withage:']) 
+
+	-a , -aval, -v val
+	--name val, --name=val
+
+2.optparse
+

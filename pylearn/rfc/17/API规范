@@ -1,0 +1,18 @@
+
+一、
+
+1.连接 connect
+
+2.Cursor对象 
+    execute 、fetchone、fetchmany 、fetchall
+
+3.利用cursor生成查询,注意模块参数paramstyle
+
+4.类型对象
+5.错误处理
+6.多线程 threadsafety
+
+7.结果映射到字典 不错哦
+
+二、
+.......

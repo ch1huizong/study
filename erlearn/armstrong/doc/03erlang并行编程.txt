@@ -1,0 +1,124 @@
+
+一、并发函数
+
+    创建：
+        Pid = spawn(Mod, Func,Args)    -->父进程知道子进程，子进程需要通过一定接口与父进程通信
+        Pid = spawn(Fun);
+
+		spawn_link(Fun) -> Pid
+        spawn_link(Mod, Func, Args) -> Pid
+
+		spawn_monitor(Fun) -> {Pid, Ref}
+        spawn_monitor(Mod, Func,Args) -> {Pid, Ref}
+
+
+    发送：
+        Pid ! Msg
+
+    接收：
+        receive
+            patt1 [ when Guard1 ] -> Expression1;
+            patt2 [ when Guard2] -> Expression2;
+            ...
+            ...注意一个other
+        after
+            Timeout ->
+                Expression
+        end.
+        
+        注意：
+            邮箱： 新到达待检查消息
+            保存队列：已经检查但不匹配的消息
+
+            时刻：只有新到达的消息匹配成功或超时后,保存队列中的消息才重新放回邮箱。
+
+            在patt1中未匹配完，进程将一直存在。
+
+			after 0语句，只有对receive到的所有消息检查过后，才触发after 0 语句.
+        
+
+    注册：
+        register(AnAtom, Pid)   ---全局通信
+        unregister(AnAtom)
+        whereis(AnAtom) 查询
+        registered() 列出
+
+二、错误处理函数
+
+    错误检测和找出原因是内建在erlang虚拟机里面的,内部支持,使用者关注错误发生后如何处理
+	
+
+	注意退出是发送的信号;
+
+	信号系统：消息 +  退出信号 + 链接请求
+
+	错误信号(自动)、显式错误信号、kill错误信号 ->  接收者(Message)
+	
+    被监控进程会发送消息，而不是退出信号，消息形式： {'DOWN', Ref, process, Pid, Why} 
+    
+    被链接进程发送退出信号，被系统进程转换为,消息形式：	{'EXIT', Pid, Why} 接收信号
+
+	process_flag(trap_exit, true) 转变为系统进程
+
+
+	独立：
+    link/unlink(Pid) -> true
+
+    monitor(process, Item) -> Ref   Item:PID,Name
+    demonitor(Ref) -> true
+         
+    exit(Why) -> none()
+    exit(Pid, Why) -> true 本身不会退出
+
+三、并行函数
+    ...
+	注意点
+		--> 是节点的连接，不是进程。
+
+	关于节点：
+		名称/连接（传输性）/隐藏节点/cookie设置 
+
+	内置相关函数
+
+        spawn/spawn_link            在远程节点分裂进程
+        disconnect_node(Node)       断开连接
+        monitor_node(Node, Flag)    开启或关闭监视
+		
+		node()                      返回本地节点的名称
+		node(Arg)                   返回Arg所在的节点，Arg可以是PID、引用、端口
+		nodes()
+		nodes(Arg)
+		is_alive() 
+		{RegName,  Node} ! Msg      向节点中的某个本地注册进程发送消息
+
+
+	命令行选项： -connect_all false, -hidden, -name, -sname, setcookie
+
+	模块：rpc, global
+
+    设置cookie:
+        1.$HOME/.erlang.cookie
+        2.erl -setcookie abc
+        3.erlang:set_cookie(Node, C)
+
+其他：
+    两种计算模型
+        分布式erlang  信任网络，局域网，拥有全部机器的控制权
+        基本socket    互联网,受限访问
+
+    lib_chan模块
+        start_server
+        start_server(Conf)
+
+        connect(Host,Port, S,P, ArgsC)  ArgsC参数是来自客户端的连接调用
+        conf配置文件：
+            {port, NNNN}
+            {service, S, password, P, mfa, SomeMod, SomeFunc, SomeArgS}
+
+
+FAQ: 
+    库函数的远程rpc只要目标主机节点有就可以。
+
+    远端节点分裂进程执行代码块，远端节点是否必须有目的函数代码？?? 必须有
+    本地端也需要有。
+

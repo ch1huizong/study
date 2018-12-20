@@ -1,0 +1,41 @@
+
+os.path			文件名路径、文件属性、测试
+
+glob			搜索匹配文件名
+
+linecache		文件缓存读取行
+
+tempfile		临时文件
+
+shutil			一般文件操作
+
+mmap			文件的内存版本（大字符串）
+
+StringIO		文本缓冲区(文件API)
+
+fnmatch			文件名匹配
+
+dircache		缓存目录文件列表
+
+filecmp			文件和目录比较
+
+codecs			_字符编码
+
+pickle			对象串行化（转换成内部的字节流)
+
+shelve			基于pickle的架子（类似字典API)
+
+anydbm			前端（数据库） 
+				python内部有各种简易的数据库实现,用于存储数据
+				key为字符串，值为字符串或None
+
+whichdb			文件使用了那一种数据库(存储形式)
+
+string			文本常量和模板
+
+re				正则表达式(查、替换、拆分)
+
+textwrap		格式化文本段落(缩进、不缩进)
+
+difflib			比较文本行差异
+

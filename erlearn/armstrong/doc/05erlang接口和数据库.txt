@@ -1,0 +1,43 @@
+
+一、接口
+    1.通过端口port;  2. 内部调用操作系统命令; 3. erlang核心内部运行外部代码，综合编译;
+
+    外部端口更类似进程;
+
+    函数：
+        open_port(PortName, [Opt]) -> Port
+
+        PortName: { spawn, Command }  / { fd, I, Out }
+        Opt: {packet, N} / stream / {line,Max } / { cd,Dir } / { env, Env }
+
+    发送：
+        Port ! {PidC,{command, Data}}
+        Port ! {PidC, {connect, Pid1}} 把相连进程的PID从PidC改为Pid1
+        Port ! {PidC,close}
+
+    接收：
+        receive
+            {Port, {data, Data}} ->...
+
+二、ets和dets表
+    
+	对事物的写不是原子的，但对写操作是原子的，读操作是原子的。
+
+	四种类型：异键(set), 有序异键(ordered_set)、同键(bag)、副本同键(duplicate_bag)
+
+    创建(ets)：
+		open_file(dets)
+
+        new(Name, [Opt]) -> TableId(主管进程)
+        Opt:
+            Mode: set, ordered_set, bag, duplicate_bag
+            Access: private, public, protected
+            Other: named_table, {keypos, K}
+
+		默认ets：set,protected,{keypos,1}
+
+	插入、查找、丢弃(delete ets或close dets)
+
+三、分布式数据库
+    mnesia: 可以先在多个节点创建数据库，创建表前“必须所有的节点数据库”都启动了。
+    可以使用rpc:multicall

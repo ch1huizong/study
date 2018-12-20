@@ -1,0 +1,102 @@
+
+
+一、语句
+
+    ---
+	函数：
+		  Name(Pattern1, Pattern2...PatternN)[When GuardSeq1] ->
+				Body1;
+		  ...
+		  Name(PatternK1, PatternK2...PatternKN)[When GuardSeqK] ->
+				BodyK.
+
+		  子句的参数个数相同。mfn决定一个函数。
+		  逗号， 分号； 句号.
+
+
+    ---
+	匿名函数：	fun
+					正常函数定义，函数名可以省略
+				end结尾
+
+	fun第一个作用：创建匿名函数,如上。
+
+	fun另一个作用：引用/别名
+
+	闭包
+
+
+    ---
+	列表推导:	[ 表达式X || Qualifier1, Qualifier2..] 列表表达式，位川表达式，过滤器
+
+				模板 || 生成器, 约束
+				利用模式匹配发挥最大最用
+
+
+	关卡(结构): 增强模式匹配的能力
+				exp1,exp2,...expn   全真为真(and)
+				G1;G2;G3...Gn       一真为真(or)
+				andalso/orelse 和and/or,后者需要两边都有参数
+                
+
+    --- 
+	case表达式：
+				case exp of
+					patt1 [ when Guard1 ] -> exp1;
+					patt2 [ when Guard2 ] -> exp2;
+					...
+				end
+				注意：最后一个表达式没有;
+
+	if表达式：注意是Guard(关卡)
+				if 
+					Guard1 -> exp1;
+					Guard2 -> exp2;
+					...
+				end
+
+
+	------------------------------------------------------------
+
+
+二、错误处理部分(调用者捕获异常)
+    
+    ---
+    内部错误;
+    显式生成: throw, exit, error
+    默认是throw类型
+   
+    ---
+    1.try表达式：
+		try FuncOrExp of
+			patt1 [ when Guard1 ] -> exp1;
+			patt2 [ when Guard2 ] -> exp2;
+			...
+		catch   
+			ExceptionType1: ExPattern1 [ When ExGuard1 ] -> ExExpressions1;
+			ExceptionType2: ExPattern2 [ When ExGuard2 ] -> ExExpressions2;
+		...
+		after
+			After表达式(返回值丢弃)
+		end
+
+        Type:是throw, exit,error
+    
+    2.catch表达式: (catch 表达式) -> {'EXIT',...}
+
+	区分：系统默认产生错误；处理错误。
+		  使用者永远不要试图阻止系统产生错误，任其崩溃，要做的是错误产生后怎么处理
+		  错误，实践上只要编写正常代码就行了。
+		
+
+	------------------------------------------------------------
+
+其他：
+    程序运行三种方式：
+        1.shell
+        2.erlc
+        3.escript
+    
+
+
+

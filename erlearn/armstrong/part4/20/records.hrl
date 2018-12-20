@@ -1,0 +1,2 @@
+-record(shop,{item, number, cost}).
+-record(cost,{item, price}).

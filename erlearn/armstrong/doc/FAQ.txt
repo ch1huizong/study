@@ -1,0 +1,6 @@
+1、二进制型
+    <<Title:30/binary,...>>  binary会决定什么? 30 字节长？
+
+2. json到map的研究？
+
+3. maps和dict区别？
