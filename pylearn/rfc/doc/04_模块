@@ -42,14 +42,20 @@
 
 	2. 导入
 		import 导入主要目标是fun/class对象或模块module 
+    
+        问题：
+            1. from Graphics(包).Primitive(包) import *
 
-		a. 相对导入(用.或..)只能通过"from"语句，只能在一个"包中"使用 
-		"形式"from . import file或from ..Primitive import lines
-	
-		b. 单独导入import Graphics 不会导入包中包含的子模块，但会调用__init__
-		from Graphics(包).Primitive(包) import *不会导入Primitive包中的模块，除非P中指定__all__
+               不会导入Primitive包中的子模块，除非P中指定__all__
+            
+            2. import Graphics 问题
+               单独导入 不会导入包中包含的子模块，但会调用__init__
 
-		c. import module会开始导入标准库
+
+            3. 相对导入，解决包中不同子模块相互引用的问题, 只能在一个"包中"使用
+               相对导入(用.或..)只能通过"from"语句, 
+               通过 from . import file或from ..Primitive import lines
+
 
 
 	3. 包的分发和安装
