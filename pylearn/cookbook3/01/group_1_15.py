@@ -5,6 +5,7 @@
 # @Email   : ch1huizong@gmail.com
 # group
 
+from collections import defaultdict
 from operator import itemgetter
 from itertools import groupby
 
@@ -37,7 +38,6 @@ for date, items in groupby(rows, key=itemgetter('date')):
 
 
 # 分组随机访问
-from collections import defaultdict
 
 rows_by_date = defaultdict(list)
 for row in rows:
