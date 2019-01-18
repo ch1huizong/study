@@ -28,7 +28,6 @@ blend(_, Dst, _) ->
 alpha(#{alpha := SA}, #{alpha :=DA}) ->
     SA + DA * (1.0 - SA).
 
-
 red(#{red := SV, alpha := SA}, #{red := DV, alpha := DA}) ->
     SV * SA + DV*DA*(1.0 - SA).
 

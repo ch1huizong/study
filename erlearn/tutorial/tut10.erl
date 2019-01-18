@@ -8,4 +8,3 @@ convert_length(Length) ->
         {inch, Y} ->
             {centimeter, Y * 2.54}
     end.
-

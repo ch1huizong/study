@@ -1,11 +1,14 @@
 -module(tut18).
+
 -export([start/1, ping/2, pong/0]).
+
 
 %% 在A节点上使B节点执行ping
 
 ping(0, Pong_Node) ->
     {pong, Pong_Node} ! finished,
     io:format("ping finised~n",[]);
+
 ping(N, Pong_Node) ->
     {pong,Pong_Node} ! {ping, self()},
     receive
@@ -13,6 +16,7 @@ ping(N, Pong_Node) ->
             io:format("Ping received pong~n",[])
     end,
     ping(N-1, Pong_Node).
+
 
 pong() ->
     receive
@@ -23,6 +27,7 @@ pong() ->
             Ping_PID ! pong,
             pong()
     end.
+
 
 start(Ping_Node) ->
     register(pong,spawn(tut18, pong,[])),

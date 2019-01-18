@@ -41,14 +41,10 @@ find_max_and_min([{Name,{c,Temp}} | Rest],
             Min_City = {Min_Name, {c, Min_Temp}}
     end,
     find_max_and_min(Rest, Max_City, Min_City);
-    
+
 find_max_and_min([], Max_City, Min_City) ->
     {Max_City, Min_City}.
 
 print_max_and_min({Max_name, {c, Max_temp}}, {Min_name, {c, Min_temp}}) ->
     io:format("Max temperature was ~w c in ~w~n",[Max_temp, Max_name]),
     io:format("Min temperature was ~w c in ~w~n",[Min_temp, Min_name]).
-
-
-
-

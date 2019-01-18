@@ -3,5 +3,6 @@
 
 convert(M, inch) ->
     M / 2.54;
+
 convert(N, centimeter) ->
     N * 2.54.

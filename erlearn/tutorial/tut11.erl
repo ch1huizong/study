@@ -7,7 +7,7 @@ month_length(Year, Month) ->
             leap;
         trunc(Year / 100) * 100 == Year ->
             not_leap;
-        trunc(Year / 4) * 4     == Year ->
+        trunc(Year / 4) * 4 == Year ->
             leap;
         true ->
             not_leap
