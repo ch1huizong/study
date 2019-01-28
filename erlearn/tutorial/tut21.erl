@@ -1,13 +1,13 @@
 -module(tut21).
 -export([start/1, ping/2, pong/0]).
 
-%% 在A节点上使B节点执行ping
 ping(N, Pong_PID) -> 
     link(Pong_PID),
     ping1(N, Pong_PID).
 
 ping1(0, _) ->
     exit(ping);
+
 ping1(N, Pong_PID) ->
     Pong_PID ! {ping, self()},
     receive
