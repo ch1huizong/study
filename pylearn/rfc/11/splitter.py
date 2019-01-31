@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:UTF -*-
 
-def split(line, types=None,delimiter=None):
+
+def split(line, types=None, delimiter=None):
     """
         Splite a line of text and optionally performs type conversion.
         By default, splitting is performed on whitespace, but a different
@@ -21,9 +22,11 @@ def split(line, types=None,delimiter=None):
     """
     fields = line.split(delimiter)
     if types:
-        fields = [ty(val) for ty,val in zip(types,fields)]
+        fields = [ty(val) for ty, val in zip(types, fields)]
     return fields
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod(verbose=True)

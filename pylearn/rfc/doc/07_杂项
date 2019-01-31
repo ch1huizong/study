@@ -1,0 +1,23 @@
+
+一. 执行环境(python解释器)
+
+    选项/环境变量
+    site配置？
+    程序终止于清除？
+
+二. 测试、调试、探查、调优
+
+    doctest
+    unittest
+    pdb
+    profile/cProfile
+
+    time            耗时
+    timeit.timeit   基准测试
+          .repeat
+    
+    sys.getsizeof   对象的内存使用情况(字节)
+    dis.dis         反汇编
+
+三.
+
