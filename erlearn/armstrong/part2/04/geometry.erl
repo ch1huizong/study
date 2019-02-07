@@ -8,7 +8,5 @@ area({square, Side}) -> Side * Side.
 
 perimeter({rectangle, Width, Height}) -> 2 * Width * Height;
 perimeter({circle, Radius}) -> 2 * 3.14159 * Radius;
-perimeter({triangle,A,B,C}) -> A + B + C;
-perimeter({square,Side}) -> 4 * Side.
-
-
+perimeter({triangle, A, B, C}) -> A + B + C;
+perimeter({square, Side}) -> 4 * Side.
