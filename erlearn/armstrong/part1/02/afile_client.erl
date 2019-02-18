@@ -8,7 +8,7 @@ ls(Server) ->
             FileList
     end.
 
-get_file(Server,File) ->
+get_file(Server, File) ->
     Server ! {self(), {get_file, File}},
     receive
         {Server, Content} ->
@@ -16,7 +16,7 @@ get_file(Server,File) ->
     end.
 
 put_file(Server, File) ->
-	{ok, Bin} = file:read_file(File),
+    {ok, Bin} = file:read_file(File),
 	Server ! {self(), {put_file, File, Bin}},
 	receive
 		{Server, Reply} -> Reply

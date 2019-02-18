@@ -3,12 +3,12 @@
 
 run() ->
     Pid = spawn(fun ping/0),
-    Pid !  self(),
+    Pid ! self(),
     receive
         pong -> ok
     end.
 
 ping() ->
     receive
-        From -> From !  pong
+        From -> From ! pong
     end.

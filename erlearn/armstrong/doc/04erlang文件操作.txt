@@ -31,5 +31,3 @@
 		file:read_file_info , -include_lib("kernel/include/file.hrl").
         
     目录(file)： list_dir, make_dir, del_dir, copy, delete
-
-
