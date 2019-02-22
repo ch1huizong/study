@@ -124,9 +124,28 @@
             exp结果为非0值， exit status 为0或true
             退出状态与[[]]相反
 
+    2. 循环
+            for arg in [list]
+            do
+                commands
+            done
+
+            while [condition]
+            do
+                commands
+            done
+
+            until [ condition ] # 当条件满足true,结束循环
+            do
+                commands
+            done
+
+            break/continue
+
 
 
 如何计算算字并储存结果？
+let
 
 
 
