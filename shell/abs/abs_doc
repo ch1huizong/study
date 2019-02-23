@@ -142,6 +142,17 @@
 
             break/continue
 
+            case "$var" in
+                con1)
+                    cmd1;;
+                con2)
+                    cmd2;;
+            esac
+
+            select var [in list]
+            do
+            done
+
 
 
 如何计算算字并储存结果？
