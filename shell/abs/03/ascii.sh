@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 veg1=carrots
 veg2=tomatoes

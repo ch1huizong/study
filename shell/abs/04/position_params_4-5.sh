@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # 调用脚本至少提供10个参数, 比如
 # ./scriptname 1 2 3 4 5 6 7 8 9 10
 

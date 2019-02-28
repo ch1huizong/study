@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 a=375 
 hello=$a  # 注意：=前后无空格
@@ -12,7 +12,7 @@ echo "${hello}" # 部分引用
 echo
 
 hello="A B C  D"
-echo $hello
+echo $hello # 变量替换不会保留其中空白
 echo "$hello" # 部分引用保留其中空白
 echo
 

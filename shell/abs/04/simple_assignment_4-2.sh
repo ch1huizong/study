@@ -5,8 +5,8 @@ echo
 a=879
 echo "The value of \"a\" is $a."
 
-# 使用let赋值
-let a=16+5
+# 使用let赋值, 数学计算
+let a=16+5 
 echo "The value of \"a\" is now $a."
 echo
 

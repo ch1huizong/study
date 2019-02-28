@@ -30,4 +30,5 @@ fi
 } > "$1.test"
 
 echo "Results of rpm test in file $1.test"
+
 exit 0

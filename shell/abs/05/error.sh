@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/Bash
 
 # 这里的\转义了一个换行符（变成续行符），
 # 效果就是variable=echo "$variable"
