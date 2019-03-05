@@ -1,9 +1,13 @@
-#! /bin/bash
-# str_test.sh: 检查null字符串和未引用的字符串.
+#!/usr/bin/env bash
+#
+# 检查字符串是否为null, 在引用和为未引用场合
+
+#### 单独的参数项目
+echo "加选项的参数"
 
 if [ -n $string1 ] # $string1没被声明和初始化
 then
-    echo "String \"string1\" is not null."  # 竟然显示为非null
+    echo "String \"string1\" is not null."  # 竟然显示为非null!
 else
     echo "String \"string1\" is null." 
 fi
@@ -16,6 +20,9 @@ else
 fi
 
 echo
+
+#### 单独的参数项目
+echo "单独参数"
 
 if [ $string1 ] # 这次，就一个单独的$string1, 符合预期
 then

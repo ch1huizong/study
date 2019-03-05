@@ -8,18 +8,18 @@ NOTGZIP=67
 if [ $# -eq 0 ]
 then
     echo "Usage: `basename $0` filename" >&2
-    exit $NOARGS
+    exit $NOARGS # 没有提供参数
 fi
 
 filename=$1
 
-if [ ! -f "$filename" ]
+if [ ! -f "$filename" ] # 但是没提供文件
 then
     echo "File $filename not found!" >&2
     exit $NOTFOUND
 fi
 
-if [ ${filename##*.} != "gz" ]   # 判断文件gz结尾
+if [ ${filename##*.} != "gz" ]   # 但是文件没以gz结尾
 then
     echo "File $1 is not a gzipped file!"
     exit $NOTGZIP

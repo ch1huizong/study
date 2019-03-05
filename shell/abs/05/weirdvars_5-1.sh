@@ -8,7 +8,7 @@ echo "$var"
 echo 
 
 IFS='\'
-echo $var   # \字符被空白替换了
+echo $var   # \字符被空白替换了, 因为发生了参数分割
 echo "$var"
 
 exit 0

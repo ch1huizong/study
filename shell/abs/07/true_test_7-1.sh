@@ -63,7 +63,6 @@ fi
 
 echo
 
-
 echo "Testing \"-n \$xyz\""
 if [ -n "$xyz" ] # 更加正式的检查, 未初始化的变量为false
 then
@@ -97,6 +96,7 @@ fi
 echo
 
 echo "Testing \"\$false\"" 
+
 if [ "$false" ]  # 未初始化的变量, 为假
 then
     echo "\"\$false\" is true."

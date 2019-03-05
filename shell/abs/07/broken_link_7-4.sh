@@ -1,5 +1,7 @@
 #! /bin/bash
 # broken_link.sh
+# 测试那些断掉的链接文件
+#
 # 
 # 用来找出特定目录下断掉的符号链接文件并且输出他们所
 # 指向的文件，便于它们可以输出提供给xargs来进行处理,比如：
@@ -11,7 +13,9 @@
 #grep "broken symbolic" |
 #sed -e 's/^\|:*broken symbolic.*$/"/g'
 #
+#
 # 谨防在/proc文件系统和任何死循环链接中使用
+
 
 [ $# -eq 0 ] && directorys=`pwd` || directorys=$@
 
@@ -19,7 +23,8 @@
 linkchk() {
     for element in $1/*
     do
-        [ -h "$element" -a ! -e "$element" ] && echo \"$element\"
+        # 是符号链接,但是不存在
+        [ -h "$element" -a ! -e "$element" ] && echo \"$element\" 
         [ -d "$element" ] && linkchk $element #  目录，递归
     done
 }
