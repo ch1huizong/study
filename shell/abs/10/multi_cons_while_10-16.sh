@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+# while的多条件循环, 写法有点特殊
 
 var1=unset
 previous=$var1

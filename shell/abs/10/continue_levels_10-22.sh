@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # 演示"continue N"命令
 
 for outer in I II III IV V
@@ -9,12 +9,12 @@ do
     do
         if [ "$inner" -eq 7 ] 
         then
-            continue 2 # continue外部循环
+            continue 2 # continue外部循环, 开启下一轮外部循环
         fi
         echo -n "$inner" 
     done
 
-echo  # 此处不会输出
+echo '-------------' # 此处不会输出
 
 done
 

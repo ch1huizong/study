@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # Faxing
 
 EXPECTED_ARGS=2

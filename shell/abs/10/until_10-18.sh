@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 END_CONDITION=end
 

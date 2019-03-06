@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # fileinfo.sh
 # 循环迭代文件
 
@@ -12,7 +12,7 @@ FILES="/usr/sbin/accept
 
 echo
 
-for file in $FILES
+for file in $FILES  # 没加引号,自动参数分割
 do
     if [ ! -e "$file" ]
     then

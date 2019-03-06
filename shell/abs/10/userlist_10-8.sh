@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # 列出系统上的所有用户
 
 PASSWORD_FILE=/etc/passwd

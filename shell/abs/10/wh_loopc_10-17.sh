@@ -13,12 +13,12 @@ done
 echo; echo
 
 # C风格
-((a=1)) # a=1
+((a = 1)) # a=1
 
-while (( a<=LIMIT )) # 变量两边没有"$"
+while (( a <= LIMIT )) # 变量两边没有"$"
 do
     echo -n "$a"
-    ((a+=1))
+    ((a += 1))
 done
 echo
 

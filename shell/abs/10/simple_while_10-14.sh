@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 var0=0
 LIMIT=10

@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 PS3='Choose your favorite vegetable: ' # 设置提示符
 

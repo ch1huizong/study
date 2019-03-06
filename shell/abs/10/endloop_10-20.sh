@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 LIMIT=19
 
@@ -9,7 +9,7 @@ a=0
 
 while [ $a -le "$LIMIT" ]
 do
-    a=$(($a+1))
+    a=$(($a+1)) # 从1开始
 
     if [ "$a" -eq 3 ] || [ "$a" -eq 11 ]
     then 
@@ -18,6 +18,7 @@ do
 
     echo -n "$a"
 done
+
 
 echo; echo
 

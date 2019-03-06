@@ -2,6 +2,7 @@
 # 测试字符串范围
 
 echo
+
 echo "Hit a key, then hit return"
 
 read keypress
