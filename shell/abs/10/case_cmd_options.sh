@@ -7,9 +7,11 @@ case "$1" in
     echo "Usage: ${0##*/} <filename>"  # 等价于${var##pattern}, 等到结果为$0
     exit $E_PARAM
     ;;
+
     -*)  # 文件名以-开头
     FILENAME=./$1  
     ;;
+
     *)
     FILENAME=$1
     ;;

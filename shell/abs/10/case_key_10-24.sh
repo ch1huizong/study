@@ -4,7 +4,6 @@
 echo
 
 echo "Hit a key, then hit return"
-
 read keypress
 
 case "$keypress" in 
@@ -21,3 +20,5 @@ case "$keypress" in
     echo "Punntuation, whitespace, or other"
     ;;
 esac
+
+exit 0

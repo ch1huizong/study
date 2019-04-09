@@ -20,7 +20,7 @@ isalpha2(){ # 测试整个字符串是否都是字母字符
     [ $# -eq 1 ] || return $FAILURE
     
     case "$1" in
-        *[!a-zA-Z]*| "")  return $FAILURE;;
+        *[!a-zA-Z]*| "")  return $FAILURE;; # 有不是字母的别的符号?
         *) return $SUCCESS;;
     esac
 }
@@ -29,7 +29,7 @@ isdigit(){ # 测试整个字符串是否都是数字
     [ $# -eq 1 ] || return $FAILURE
 
     case "$1" in
-        *[!0-9]*| "")  return $FAILURE;;
+        *[!0-9]*| "")  return $FAILURE;; # 有不是数字的字符
         *) return $SUCCESS;;
     esac
 }
@@ -38,8 +38,8 @@ isfloat(){
     [ $# -eq 1 ] || return $FAILURE
 
     case "$1" in
-        *[0-9].[0-9]*)  return $SUCCESS;;
-        *) return $FAILURE;;
+        *[!0-9.]*)  return $FAILURE;;
+        *[.]*) return $SUCCESS;;  # 必需包含.?
     esac
 }
 
