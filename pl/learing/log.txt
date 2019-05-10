@@ -1,0 +1,55 @@
+10.
+unless
+until
+修饰符表达式
+elsif
+自增、自减
+for循环
+循环(5)控制: last, next, redo, 标签
+条件操作符 ? :
+逻辑操作符和短路逻辑
+
+部分求值运算符: 天然的控制结构
+
+
+
+11.
+模块
+
+
+
+
+12.
+文件测试操作符
+state, localtime
+
+13.
+硬链接：1.不能跨文件系统 2.不能为目录建立链接
+软链接：不受限制
+
+chdir,glob,<>, 
+opendir,readdir,closedir,
+unlink, rename
+link,symlink,readlink
+mkdir,rmdir,chmod,chown,utime
+
+14.
+index, substr, sprintf
+排序
+
+
+16.
+system, exec, 反引号 
+IPC::System::Simple
+进程间通信：文件句柄管道
+fork
+kill信号
+
+17.
+切片
+grep,map
+
+
+
+
+
