@@ -3,7 +3,7 @@
 $pi = 3.141592654 ;
 
 # circle
-print "Input Radius:";
+print "What is the radius? ";
 chomp($radius = <STDIN>);
 if($radius <= 0){
 	print "Perimeter of a Circle of radius $radius is 0.\n";
@@ -27,4 +27,3 @@ print "Input the repeat number:";
 chomp($repeat = <STDIN>);
 $result = $mystring x $repeat;
 print "The Result is:\n$result";
-
