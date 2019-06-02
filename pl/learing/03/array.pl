@@ -68,5 +68,3 @@ print "\n" x 3;
 print "How many rocks do you have?\n";
 print "I have ",@rocks," rocks!\n";
 print "I have ",scalar @rocks," rocks!\n";
-
-

@@ -1,0 +1,43 @@
+一、请求
+    requests.get(url, params,... )
+        verify: True or Fasle 主机证书
+        cert: 客户端证书
+        stream: True 推迟响应body下载
+        hooks, auth, proxies,
+        
+
+    requests.post(url, data, headers, cookies, files,...)
+        data: 字典或字符串
+        files: 文件字典
+        cookies: 字典
+
+
+    重定向： allow_redirects , r.history
+    超时： timeout
+    异常：  ConnectionError,
+            HTTPError,        
+            Timeout,
+            TooManyRedirects,
+            RequestException
+
+二、响应
+
+    状态码: r.status_code
+    抛出: r.raise_for_status()
+    编码: r.encoding
+    
+    解码后unicode文本: r.text
+    二进制响应: r.content
+    原始套接字: r.raw
+    json响应: r.json()
+
+
+三、对象和其它
+
+    Session对象
+    Request对象
+
+    HTTP动词...
+
+
+lxml: 安装zlib1g-dev

@@ -1,0 +1,87 @@
+
+一、与DOM的节点树做参照
+
+
+二、对象：
+	1.Tag : name, 属性
+	2.NavigableString : 被tag.string引用
+	3.BeautifulSoup对象
+	4.Comment对象
+
+	实例属性:name, string vs 标签属性(多值属性)
+
+
+三、遍历文档树：
+
+	元素节点Tag: 
+
+		子节点： .contents(直接子节点)/children(生成器), descendants(子孙节点),
+				 .string(文本子节点), .strings和.stripped_strings(字符串),
+
+		父节点： .parent, .parents
+
+		兄弟节点： .next_sibling(s), .previous_sibling(s)
+
+		下(前)一个元素： .next_element(s), .previous_element(s)  节点树,的解析顺序
+
+
+四、搜索文档树：
+	
+	过滤器(标签名)：字符串，正则，列表，True，方法(参数是标签元素或元素属性)
+
+
+    ------------------------------------------------------------
+
+	方法： find_all(name, attrs, recursive, string, **kwargs )
+		   
+		   name:标签名
+		   keyword参数：关键字参数，tag的属性,可以同上连用，可以包裹进attrs中
+				:class_属性搜索
+				:string  搜索字符串(文本节点),可以于tag一起使用，效果tag.string=string
+				:limit 限制数量
+				:recursive 默认True,若只搜索直接节点Fasle
+		   简写...
+
+		   find/find_all 
+		   find_parent(s)
+		   find_next_sibling(s), find_previous_sibling(s),
+		   find_(all_)next, find_(all_)previous,
+
+	
+	CSS选择器： soup(或tag).select('css选择器') 、select_one
+
+
+
+五、修改文档树：
+	
+	新建：		soup.new_tag, soup.new_string,
+
+	元素节点： 
+				append, insert, insert_before, insert_after 对contents列表操作
+
+				extract(移除保留), decompose(移除并销毁),replace_with, 
+
+				wrap（包进）, unwrap(移除被包进)
+
+	输出：		prettify, unicode,str  , get_text(分割符, strip)
+
+
+
+六、其他：
+
+	编码：	编码自动检测(UnicodeDammit): 智能引号，混合编码
+			soup.original_encodings, from_encoding,exclude_encodings
+		   
+			输出(字节串)编码都是UTF8, 
+			或可选择prettify('latin-1'), tag.encode
+
+	相等，
+	复制copy.copy
+	指定解析的部分文档(SoupStrainer),传入Beau...的parse_only参数
+
+	错误......
+
+注意：
+	搜索时：
+	text
+	string
