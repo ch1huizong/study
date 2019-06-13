@@ -1,13 +1,15 @@
-#! /usr/bin/env python
-# -*- coding:UTF-8 -*-
-# 可以作为一个ProxyServer原型
+#! /usr/bin/env python3
+# -*-coding:UTF-8 -*-
+# @Time    : 2019/06/13 10:47:31
+# @Author  : che
+# @Email   : ch1huizong@gmail.com
+
 
 class Server(object):
-
     def __init__(self, ip, hostname):
         self.ip = ip
         self.hostname = hostname
-        
+
     def set_ip(self, ip):
         self.ip = ip
 
@@ -15,8 +17,9 @@ class Server(object):
         self.hostname = hostname
 
     def ping(self, ip_addr):
-        print "Pinging %s from %s (%s)" % (ip_addr, self.ip, self.hostname)
+        print('Pinging %s from %s (%s)' % (ip_addr, self.ip, self.hostname))
+
 
 if __name__ == '__main__':
-    server = Server('192.168.0.150', 'Klab')
+    server = Server('192.168.0.150', 'King')
     server.ping('192.168.0.1')
