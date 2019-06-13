@@ -1,5 +1,5 @@
 
-一. 进程
+### 一. 进程
 	
 	subprocess:				-执行系统命令
 		call				不"捕获"输出	
@@ -18,7 +18,7 @@
 	multiprocessing			-进程
 
 
-二. 网络(本质还是计算机进程间通信)
+### 二. 网络(本质还是计算机进程间通信)
 
 	socket					底层网络
 
@@ -37,10 +37,20 @@
 	graphviz/imagemagic
 
 
-三. GUI
+### 三. GUI
 	
 	pygtk
 
 	curses
 
 	django					-web端口
+
+
+### 一. Ipython 
+
+    1. 变量
+        In, Out, 
+
+    2. magic函数
+        
+    !ps aux | grep $user | grep $process
