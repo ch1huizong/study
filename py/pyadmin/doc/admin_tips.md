@@ -18,24 +18,6 @@
 	multiprocessing			-进程
 
 
-### 二. 网络(本质还是计算机进程间通信)
-
-	socket					底层网络
-
-	httplib
-
-	ftplib
-	urllib/urllib2
-
-	xmlrpclib				-远程过程调用
-
-	paramiko				-ssh库
-
-	twisted
-
-	scapy					-交互式包控制程序和库
-	graphviz/imagemagic
-
 
 ### 三. GUI
 	
@@ -45,12 +27,3 @@
 
 	django					-web端口
 
-
-### 一. Ipython 
-
-    1. 变量
-        In, Out, 
-
-    2. magic函数
-        
-    !ps aux | grep $user | grep $process

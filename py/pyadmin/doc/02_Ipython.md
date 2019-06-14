@@ -3,7 +3,7 @@
 1. ### shell执行
 
     * alias
-    
+ 
     * rehashx
 
     * result = !ps aux | grep $user | grep $process
@@ -18,8 +18,8 @@
 
     * 可变扩展
     	```python
-    	for i in range(10):
-    		!date > ${i}.txt
+    for i in range(10):
+        !date > ${i}.txt
     	```
     	
     * 字符串处理
