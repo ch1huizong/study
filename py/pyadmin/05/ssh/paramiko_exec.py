@@ -1,18 +1,21 @@
-#! /usr/bin/env python
-# -*- coding:UTF-8 -*-
+#! /usr/bin/env python3
+# -*-coding:utf-8 -*-
+# @Time    : 2019/06/14 20:33:53
+# @Author  : che
+# @Email   : ch1huizong@gmail.com
 
 import paramiko
 
-hostname = 'liufei' 
+hostname = "che"
 port = 22
-username = 'root'
-password = 'Liufei123'
+username = ""
+password = ""
 
-if __name__ == '__main__':
-    paramiko.util.log_to_file('paramiko.log')
+if __name__ == "__main__":
+    paramiko.util.log_to_file("paramiko.log")
     s = paramiko.SSHClient()
     s.load_system_host_keys()
     s.connect(hostname, port, username, password)
-    stdin, stdout, stderr = s.exec_command('last')
-    print stdout.read()
+    stdin, stdout, stderr = s.exec_command("last")
+    print(stdout.read())
     s.close()
