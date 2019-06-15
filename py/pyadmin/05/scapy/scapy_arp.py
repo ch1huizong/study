@@ -1,26 +1,27 @@
-#! /usr/bin/env python
-# -*- coding:UTF-8 -*-
+#! /usr/bin/env python3
+# -*- coding:utf-8 -*-
 # 平台中立
 
 from scapy.all import srp, Ether, ARP, conf
 import sys
 
-def arping(iprange="192.168.1.0/24"):
+
+def arping(iprange="192.168.0.0/24"):
     conf.verb = 0
-    ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=iprange), timeout=2)
+    ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff") / ARP(pdst=iprange), timeout=2)
 
     collection = []
     for snd, rcv in ans:
-        result = rcv.sprintf(r'%ARP.psrc% %Ether.src%').split()
+        result = rcv.sprintf(r"%ARP.psrc% %Ether.src%").split()
         collection.append(result)
     return collection
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     if len(sys.argv) > 1:
         for ip in sys.argv[1:]:
-            print "arping", ip
-            print arping(ip)
+            print("arping", ip)
+            print(arping(ip))
     else:
-        print arping()
+        print(arping())
