@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Nginx日志查看器 - 查看文件{% endblock %}
+
+{% block content %}
+<table border="1">
+	<tr>
+		<td><a href="/logview/viewlog/status/{{ filename }}/">Status</a></td>
+		<td><a href="/logview/viewlog/host/{{ filename }}/">Remote Host</a></td>
+		<td><a href="/logview/viewlog/bytes/{{ filename }}/">Bytes Sent</a></td>
+		<td><a href="/logview/viewlog/linesort/{{ filename }}/">Line</a></td>
+	</tr>
+
+	{% for l in loglines %}
+	<tr>
+		<td>{{ l.status }}</td>
+		<td>{{ l.host }}</td>
+		<td>{{ l.bytes }}</td>
+		<td>{{ l.linesort }}</td> 
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}
