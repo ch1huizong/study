@@ -3,7 +3,7 @@
 # @Time    : 2019/06/16 16:44:29
 # @Author  : che
 # @Email   : ch1huizong@gmail.com
-# 会把活动的结果加入到arping队列
+# 多队列和多线程池, 会把活动的结果加入到arping队列
 
 import re
 from threading import Thread
@@ -14,7 +14,7 @@ num_ping_threads = 3
 num_arp_threads = 3
 in_queue = Queue()
 out_queue = Queue()
-ips = ["192.168.0.%d" % ip for ip in range(1, 255)]
+ips = ["192.168.1.%d" % ip for ip in range(1, 255)]
 
 
 def pinger(i, iq, oq):

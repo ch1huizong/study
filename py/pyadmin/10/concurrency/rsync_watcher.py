@@ -3,7 +3,7 @@
 # @Time    : 2019/06/16 18:23:55
 # @Author  : che
 # @Email   : ch1huizong@gmail.com
-# 后台保持两个目录同步，可以进一步扩展
+# 线程化的目录同步工具,后台保持两个目录同步，可以进一步扩展
 
 from threading import Timer
 import sys

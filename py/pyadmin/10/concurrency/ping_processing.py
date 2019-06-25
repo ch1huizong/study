@@ -15,7 +15,7 @@ ips = ["192.168.0.%d" % ip for ip in range(1, 255)]
 
 def f(i, q):
     while True:
-        if q.empty():
+        if q.empty():  # !这里不太严谨,有可能无限等待
             sys.exit()
         print("Process Number: %s" % i)
         ip = q.get()

@@ -43,6 +43,8 @@ class ImageFile(object):
             self.size = options.size
             self.num = options.number
             self.create_image()
+        else:
+            p.print_help()
 
 
 def main():

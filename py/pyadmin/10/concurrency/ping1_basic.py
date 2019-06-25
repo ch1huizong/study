@@ -10,7 +10,7 @@ from queue import Queue
 
 num_threads = 3
 queue = Queue()
-ips = ["192.168.0.%d" % ip for ip in range(1, 255)]
+ips = ["192.168.1.%d" % ip for ip in range(1, 255)]
 
 
 def pinger(i, q):  # 实际工作

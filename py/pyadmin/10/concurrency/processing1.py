@@ -23,5 +23,5 @@ for i in range(10):
     i.start()
 
 print("main process joins on queue")
-i.join() # 其实可以没有
+#i.join() # 其实可以没有
 print("Main Program finished")

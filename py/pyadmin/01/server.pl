@@ -2,6 +2,6 @@
 
 use Server;
 
-$server = Server->new('192.168.0.150','King');
+$server = Server->new('192.168.1.3','King');
 
-$server->ping('192.168.0.1');
+$server->ping('192.168.1.10');

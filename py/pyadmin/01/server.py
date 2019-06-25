@@ -21,5 +21,5 @@ class Server(object):
 
 
 if __name__ == '__main__':
-    server = Server('192.168.0.150', 'King')
-    server.ping('192.168.0.1')
+    server = Server('192.168.1.3', 'King')
+    server.ping('192.168.1.10')

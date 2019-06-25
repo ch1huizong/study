@@ -17,10 +17,12 @@ def main():
     )
     p.add_option("-v", action="count", dest="verbose", help="Enables Verbose Output")
     options, arguments = p.parse_args()
+
     if len(arguments) == 1:
         if options.verbose:
             print("Verbose Mode Enabled at Level: %s" % options.verbose)
         path = arguments[0]
+
         for filename in os.listdir(path):
             if options.verbose == 1:
                 print("Filename: %s" % filename)
