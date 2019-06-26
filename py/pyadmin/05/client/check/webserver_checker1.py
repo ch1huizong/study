@@ -30,28 +30,28 @@ def check_webserver(address, port, resource):
         rsp = s.recv(100).decode()
         print("Received 100 bytes of HTTP response")
         print("|||\n%s\n|||" % rsp)
-    except socket.error as e:  # 网络部分发生异常
+    except socket.error as e:
         print("Connection to %s on port %s failed: %s" % (address, port, e))
-        return False
+        return False  # 网络部分发生异常
     finally:
         print("Closing the connection")
         s.close()
 
     print("\n")
-    lines = rsp.splitlines()  # 解析响应
+    lines = rsp.splitlines()
     print("First line of HTTP response: %s" % lines[0])
     try:
         version, status, mesg = re.split("\s+", lines[0], 2)
         print("Version: %s, Status: %s, Message: %s" % (version, status, mesg))
     except ValueError:
         print("Failed to split status line")
-        return False
+        return False  # 解析响应出问题
     if status in ["200", "301"]:
         print("Success - status %s" % status)  # web服务运行正常,且资源正确
         return True
     else:
         print("Status was %s" % status)
-        return False
+        return False  # 状态码出问题
 
 
 if __name__ == "__main__":

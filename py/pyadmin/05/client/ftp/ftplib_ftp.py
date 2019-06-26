@@ -49,6 +49,13 @@ parser.add_option(
 
 (options, args) = parser.parse_args()
 
+if not (options.remote_file and options.remote_host_address and options.local_file):
+    parser.error("REMOTE HOST, LOCAL FILE NAME, AND REMOTE FILE NAME are  mandatory")
+
+if options.username and not options.password:
+    parser.error("PASSWORD is mandatory if USERNAME is present")
+
+
 ftp = FTP(options.remote_host_address)
 if options.username:
     try:

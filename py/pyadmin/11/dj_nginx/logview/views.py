@@ -22,7 +22,7 @@ def view_log(request, sortmethod, filename):
     logfile.close()
 
     try:
-        loglines.sort(key=operator.itemgetter(sortmethod))
+        loglines.sort(key=operator.itemgetter(sortmethod)) # 列表项里的字段
     except KeyError:
         pass
     return render(

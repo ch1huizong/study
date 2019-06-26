@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class OperatingSystem(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
@@ -31,7 +31,7 @@ class HardwareComponent(models.Model):
 class Server(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
-    os = models.ForeignKey(OperatingSystem)
+    os = models.ForeignKey(OperatingSystem, on_delete=models.CASCADE)
     services = models.ManyToManyField(Service)
     hardware_component = models.ManyToManyField(HardwareComponent)
 
@@ -40,8 +40,9 @@ class Server(models.Model):
 
 
 class IPAddress(models.Model):
-    address = models.TextField(blank=True, null=True)
-    server = models.ForeignKey(Server)
+    # address = models.TextField(blank=True, null=True)
+    address = models.GenericIPAddressField(blank=True, null=True)
+    server = models.ForeignKey(Server, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.address
