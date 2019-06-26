@@ -11,22 +11,21 @@ class DiskWalk(object):
     def __init__(self, path):
         self.path = path
 
-    def gen_paths(self):
+    @property
+    def paths(self):
         for dirpath, dirnames, filenames in os.walk(self.path):
             for file in filenames:
                 fullpath = os.path.join(dirpath, file)
                 yield fullpath
 
-    def gen_files(self):
+    @property
+    def files(self):
         for dirpath, dirnames, filenames in os.walk(self.path):
             for file in filenames:
                 yield file
 
-    def gen_dirs(self):
+    @property
+    def dirs(self):
         for dirpath, dirnames, filenames in os.walk(self.path):
             for dir in dirnames:
                 yield dir
-
-    paths = property(gen_paths)
-    files = property(gen_files)
-    dirs = property(gen_dirs)
