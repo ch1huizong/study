@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Server Inventory Category View{% endblock %}
+
+{% block content %}
+<div>
+  <h2>Operating Systems</h2> {# 操作系统分类 #}
+  <ul>
+    {% for o in os_list %}
+    <li><a href="{% url 'inventory:categorized' 'os' o.id %}">{{ o.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div>
+  <h2>Services</h2> {# 服务分类#}
+  <ul>
+    {% for s in svc_list %}
+    <li><a href="{% url 'inventory:categorized' 'svc' s.id %}">{{ s.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div>
+  <h2>Hardware Components</h2> {# 硬件分类 #}
+  <ul>
+    {% for h in hardware_list %}
+    <li><a href="{% url 'inventory:categorized' 'hw' h.id %}">{{ h.manufacturer }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -14,7 +14,7 @@ def main(request):
     )
 
 
-def categoried(request, category, category_id):
+def categorized(request, category, category_id):
     category_dict = {"os": "Operating System", "svc": "Service", "hw": "Hardware"}
 
     if category == "os":
@@ -22,8 +22,8 @@ def categoried(request, category, category_id):
         category_name = OperatingSystem.objects.get(id=category_id)
 
     elif category == "svc":
-        server_list = Server.objects.filter(services__exact=category_id)
-        category_name = Service.objects.get(id=category_id)
+        server_list = Server.objects.filter(services__exact=category_id)  # 好吗
+        category_name = Service.objects.get(id=category_id)  # 详细情况
 
     elif category == "hw":
         server_list = Server.objects.filter(hardware_component__exact=category_id)
@@ -36,8 +36,8 @@ def categoried(request, category, category_id):
         "inventory/categoried.html",
         {
             "server_list": server_list,
-            "category": category_dict[category],
-            "category_name": category_name,
+            "category": category_dict[category],  # 分类概览
+            "category_name": category_name,  # 详情
         },
     )
 
