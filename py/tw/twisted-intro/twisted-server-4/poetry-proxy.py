@@ -60,7 +60,7 @@ class PoetryProxyProtocol(Protocol):
         if self.deferred is not None:
             deferred, self.deferred = self.deferred, None
             # 这里改变了
-            deferred.cancel()  # cancel the deferred if it hasn't fired 
+            deferred.cancel()  # cancel the deferred if it hasn't fired
 
 
 class PoetryProxyFactory(ServerFactory):

@@ -99,6 +99,7 @@ class GibberishError(Exception):
     pass
 
 
+# 可以模拟外部提供的服务
 def cummingsify(poem):
     """
     Randomly do one of the following:
@@ -109,7 +110,7 @@ def cummingsify(poem):
     """
 
     def success():
-        return poem.lower()
+        return poem.upper()
 
     def gibberish():
         raise GibberishError()
@@ -128,7 +129,7 @@ def poetry_main():
     poems = []
     errors = []
 
-    def try_to_cummingsify(poem):
+    def try_to_cummingsify(poem): # 如何包装来调用外部服务
         try:
             return cummingsify(poem)
         except GibberishError:
@@ -141,7 +142,7 @@ def poetry_main():
         print poem
         poems.append(poem)
 
-    def poem_failed(err):
+    def poem_failed(err): # 必然是Gibberish或network
         print >> sys.stderr, "The poem download failed."
         errors.append(err)
 

@@ -13,8 +13,8 @@ def upagain():
 
 from twisted.internet import reactor
 
-reactor.callWhenRunning(falldown)
-reactor.callWhenRunning(upagain)  # 再次调用时不会再调用上个
+reactor.callWhenRunning(falldown) # 会回到顶部重新回调吗？
+reactor.callWhenRunning(upagain)
 
 print "Starting the reactor."
 reactor.run()

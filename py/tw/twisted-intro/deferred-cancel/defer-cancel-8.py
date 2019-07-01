@@ -16,6 +16,6 @@ def errback(err):
 
 d = defer.Deferred(canceller)  # created by lower-level code
 d.addCallbacks(callback, errback)  # added by higher-level code
-d.callback("result") # 取消一个被激发的回调不会调用canceller
+d.callback("result")  # 取消一个被激发的回调不会调用canceller
 d.cancel()
 print "done"

@@ -3,7 +3,7 @@ from twisted.internet.defer import Deferred
 
 def send_poem(d):
     print "Sending poem"
-    d.callback("Once upon a midnight dreary") # 会忽略结果
+    d.callback("Once upon a midnight dreary")  # 会忽略结果
 
 
 def get_poem():

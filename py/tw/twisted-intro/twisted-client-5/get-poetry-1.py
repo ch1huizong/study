@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 增强了Defer的异常处理能力
 # This is the Twisted Get Poetry Now! client, version 5.1
 
 import optparse, random, sys
@@ -103,7 +104,7 @@ class CannotCummingsify(Exception):
     pass
 
 
-def cummingsify(poem):
+def cummingsify(poem): # 改写了服务内容了，使异常包含诗歌
     """
     Randomly do one of the following:
 

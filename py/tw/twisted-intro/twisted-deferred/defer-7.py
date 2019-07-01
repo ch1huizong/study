@@ -5,7 +5,6 @@ from twisted.internet.defer import Deferred
 def out(s):
     print s
 
-
 d = Deferred()
 d.addCallbacks(out, out)
 d.errback(Exception("First error"))

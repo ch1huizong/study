@@ -12,12 +12,13 @@ from twisted.application import internet, service
 
 # Normally we would import these classes from another module.
 
-class PoetryProtocol(Protocol):
 
+class PoetryProtocol(Protocol):
     def connectionMade(self):
         poem = self.factory.service.poem
-        log.msg('sending %d bytes of poetry to %s'
-                % (len(poem), self.transport.getPeer()))
+        log.msg(
+            "sending %d bytes of poetry to %s" % (len(poem), self.transport.getPeer())
+        )
         self.transport.write(poem)
         self.transport.loseConnection()
 
@@ -31,29 +32,31 @@ class PoetryFactory(ServerFactory):
 
 
 class PoetryService(service.Service):
-
     def __init__(self, poetry_file):
         self.poetry_file = poetry_file
 
     def startService(self):
         service.Service.startService(self)
         self.poem = open(self.poetry_file).read()
-        log.msg('loaded a poem from: %s' % (self.poetry_file,))
+        log.msg("loaded a poem from: %s" % (self.poetry_file,))
 
 
 # This is the main body of the plugin. First we define
 # our command-line options.
 
+
 class Options(usage.Options):
 
     optParameters = [
-        ['port', 'p', 10000, 'The port number to listen on.'],
-        ['poem', None, None, 'The file containing the poem.'],
-        ['iface', None, 'localhost', 'The interface to listen on.'],
-        ]
+        ["port", "p", 10000, "The port number to listen on."],
+        ["poem", None, None, "The file containing the poem."],
+        ["iface", None, "localhost", "The interface to listen on."],
+    ]
+
 
 # Now we define our 'service maker', an object which knows
 # how to construct our service.
+
 
 class PoetryServiceMaker(object):
 
@@ -66,15 +69,17 @@ class PoetryServiceMaker(object):
     def makeService(self, options):
         top_service = service.MultiService()
 
-        poetry_service = PoetryService(options['poem'])
+        poetry_service = PoetryService(options["poem"])
         poetry_service.setServiceParent(top_service)
 
         factory = PoetryFactory(poetry_service)
-        tcp_service = internet.TCPServer(int(options['port']), factory,
-                                         interface=options['iface'])
+        tcp_service = internet.TCPServer(
+            int(options["port"]), factory, interface=options["iface"]
+        )
         tcp_service.setServiceParent(top_service)
 
         return top_service
+
 
 # This variable name is irrelevent. What matters is that
 # instances of PoetryServiceMaker implement IServiceMaker

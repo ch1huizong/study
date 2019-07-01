@@ -69,8 +69,8 @@ class PoetryClientFactory(ClientFactory):
     protocol = PoetryProtocol  # tell base class what proto to build
 
     def __init__(self, poetry_count):
-        self.poetry_count = poetry_count
-        self.poems = []
+        self.poetry_count = poetry_count  # 记载诗歌数量
+        self.poems = [] # 存储诗歌
 
     def poem_finished(self, poem=None):
         if poem is not None:

@@ -61,7 +61,7 @@ def get_poetry(sockets):
     # we go around this loop until we've gotten all the poetry
     # from all the sockets. This is the 'reactor loop'.
 
-    while sockets:  # 循环sockets
+    while sockets:
         # this select call blocks until one or more of the
         # sockets is ready for read I/O
         rlist, _, _ = select.select(sockets, [], [])  # 这里实际发生阻塞
@@ -76,7 +76,7 @@ def get_poetry(sockets):
                 try:
                     new_data = sock.recv(1024)
                 except socket.error, e:
-                    if e.args[0] == errno.EWOULDBLOCK:  # 已经变阻塞了，网络原因？
+                    if e.args[0] == errno.EWOULDBLOCK:  # 什么情况下？ 
                         # this error code means we would have
                         # blocked if the socket was blocking.
                         # instead we skip to the next socket

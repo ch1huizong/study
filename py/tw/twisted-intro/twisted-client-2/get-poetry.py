@@ -52,7 +52,7 @@ for that to work.
 
 class PoetryProtocol(Protocol):  # 自己定义的诗歌协议
 
-    poem = ""
+    poem = "" # 仅仅提供占位符
     task_num = 0
 
     def dataReceived(self, data):
@@ -79,7 +79,7 @@ class PoetryClientFactory(ClientFactory):
 
     def buildProtocol(self, address):
         proto = ClientFactory.buildProtocol(self, address)
-        proto.task_num = self.task_num  # 协议实例记录一个task num
+        proto.task_num = self.task_num  # 协议实例跟踪任务号
         self.task_num += 1
         return proto
 
@@ -115,8 +115,7 @@ def poetry_main():
 
     for address in addresses:
         host, port = address
-        # 创建每条连接, 每一个factory实例相同
-        reactor.connectTCP(host, port, factory)
+        reactor.connectTCP(host, port, factory) # 每条链接的factory实例相同
 
     reactor.run()  # 阻塞中
     elapsed = datetime.datetime.now() - start

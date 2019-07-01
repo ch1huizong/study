@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 使用了Defer管理回调函数
 # This is the Twisted Get Poetry Now! client, version 4.0
 
 import optparse, sys

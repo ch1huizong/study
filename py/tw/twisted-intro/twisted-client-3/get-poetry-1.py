@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 代码复用，提供异步API, 并增加了异常处理能力
 # This is the Twisted Get Poetry Now! client, version 3.1.
 
 # NOTE: This should not be used as the basis for production code.

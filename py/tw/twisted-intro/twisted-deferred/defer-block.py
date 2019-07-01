@@ -48,7 +48,7 @@ d.addCallback(end_chain)
 
 def fire():
     print "Firing deferred."
-    d.callback(True)
+    d.callback(True) # 会阻塞
     print "Firing finished."
 
 

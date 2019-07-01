@@ -101,7 +101,7 @@ class PoetrySocket(object):
                 else:
                     bytes += bytesread
             except socket.error, e:
-                if e.args[0] == errno.EWOULDBLOCK:
+                if e.args[0] == errno.EWOULDBLOCK: # 是不是对端关闭了？
                     break
                 return main.CONNECTION_LOST
 
