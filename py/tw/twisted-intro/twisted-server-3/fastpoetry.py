@@ -27,7 +27,7 @@ class PoetryFactory(ServerFactory):
         self.service = service
 
 
-class PoetryService(service.Service):  # 仅仅加载诗歌以及为其他需要诗歌的对象提供接口
+class PoetryService(service.Service):
     def __init__(self, poetry_file):
         self.poetry_file = poetry_file
 
@@ -38,8 +38,8 @@ class PoetryService(service.Service):  # 仅仅加载诗歌以及为其他需要
 
 
 #####################################################################
-##
-## 接下来是应用的组织结构
+#
+##  接下来是应用的组织结构
 ##
 #####################################################################
 

@@ -54,7 +54,7 @@ class TransformProtocol(NetstringReceiver):
 
         self.xformRequestReceived(xform_name, poem)
 
-    def xformRequestReceived(self, xform_name, poem):
+    def xformRequestReceived(self, xform_name, poem):  # 请求转换
         new_poem = self.factory.transform(xform_name, poem)
 
         if new_poem is not None:
@@ -63,14 +63,14 @@ class TransformProtocol(NetstringReceiver):
         self.transport.loseConnection()
 
 
-class TransformFactory(ServerFactory):  # 保留一些共同的东西
+class TransformFactory(ServerFactory):
 
     protocol = TransformProtocol
 
     def __init__(self, service):
         self.service = service
 
-    def transform(self, xform_name, poem):
+    def transform(self, xform_name, poem): # 提供协议访问统一API
         thunk = getattr(self, "xform_%s" % (xform_name,), None)
 
         if thunk is None:  # no such transform
@@ -81,8 +81,9 @@ class TransformFactory(ServerFactory):  # 保留一些共同的东西
         except:
             return None  # transform failed
 
+    # 服务的一层薄包装
     def xform_cummingsify(self, poem):
-        return self.service.cummingsify(poem)  # 具体转换
+        return self.service.cummingsify(poem)
 
 
 def main():

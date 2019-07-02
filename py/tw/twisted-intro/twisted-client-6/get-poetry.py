@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 # This is the Twisted Get Poetry Now! client, version 6.0
 # Defer深层嵌套，请求两套协议
+# 关键是同步调用如何转化为异步调用，并合理组织?
+# 分隔任务？
 
 import optparse, sys
 
@@ -52,6 +54,7 @@ ports for that to work.
     return map(parse_address, addresses)
 
 
+# 下载诗歌工作
 class PoetryProtocol(Protocol):
 
     poem = ""
@@ -84,7 +87,7 @@ class PoetryClientFactory(ClientFactory):
             d.errback(reason)
 
 
-# 远程调用服务
+# 转换诗歌工作
 class TransformClientProtocol(NetstringReceiver):
     def connectionMade(self):
         self.sendRequest(self.factory.xform_name, self.factory.poem)
@@ -113,7 +116,7 @@ class TransformClientFactory(ClientFactory):
         d, self.deferred = self.deferred, None
         d.callback(poem)
 
-    def clientConnectionLost(self, _, reason):
+    def clientConnectionLost(self, _, reason): # 这里？
         if self.deferred is not None:
             d, self.deferred = self.deferred, None
             d.errback(reason)
@@ -121,7 +124,8 @@ class TransformClientFactory(ClientFactory):
     clientConnectionFailed = clientConnectionLost
 
 
-class TransformProxy(object):  # 请求代理
+# 用户使用接口
+class TransformProxy(object):
     """
     I proxy requests to a transformation service.
     """
@@ -135,7 +139,7 @@ class TransformProxy(object):  # 请求代理
         from twisted.internet import reactor
 
         reactor.connectTCP(self.host, self.port, factory)
-        return factory.deferred
+        return factory.deferred # 返回defer
 
 
 def get_poetry(host, port):
@@ -149,7 +153,7 @@ def get_poetry(host, port):
 
     factory = PoetryClientFactory(d)
     reactor.connectTCP(host, port, factory)
-    return d
+    return d # 也返回defer
 
 
 def poetry_main():
@@ -157,15 +161,16 @@ def poetry_main():
 
     xform_addr = addresses.pop(0)
 
-    proxy = TransformProxy(*xform_addr)  # 转换代理
+    proxy = TransformProxy(*xform_addr)
 
     from twisted.internet import reactor
 
     poems = []
     errors = []
 
+    # 注意如何调用远程服务
     def try_to_cummingsify(poem):  # 返回defer的函数
-        d = proxy.xform("cummingsify", poem)  # 异步远程调用
+        d = proxy.xform("cummingsify", poem) # 错误会被捕获 
 
         def fail(err):
             print >> sys.stderr, "Cummingsify failed!"

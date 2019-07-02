@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
-# 诗歌服务器插件
+# 通过制作插件系统，运行诗歌服务器 
+# 没运行成功,怎么回事?
 # This is the Twisted Fast Poetry Server, version 3.0
 
 from zope.interface import implements

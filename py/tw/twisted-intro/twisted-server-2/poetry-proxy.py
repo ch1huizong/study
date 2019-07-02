@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 缓存代理，会返回succeed
 # This is the Twisted Poetry Proxy, version 2.0
 
 import optparse

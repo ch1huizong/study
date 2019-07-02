@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 # This is the Twisted Poetry Proxy, version 1.0
+# 缓存代理服务器
 # defer可以先激活了，再添加callback函数
 
 import optparse
@@ -51,7 +52,7 @@ to proxy the poem for the server running on port 10000.
     return options, parse_address(args[0])
 
 
-# 代理协议
+# 诗歌代理服务器 
 class PoetryProxyProtocol(Protocol):
     def connectionMade(self):
         d = maybeDeferred(self.factory.service.get_poem)  # 可能诗歌也可能defer
@@ -67,6 +68,7 @@ class PoetryProxyFactory(ServerFactory):
         self.service = service
 
 
+# 创建TCP链接就可以使用它了,这里可否再简化？
 class PoetryClientProtocol(Protocol):
 
     poem = ""
@@ -112,11 +114,11 @@ class ProxyService(object):
             print "Using cached poem."
             return self.poem
 
+        # 接下来是怎么样抓取诗歌
         print "Fetching poem from server."
         factory = PoetryClientFactory()
         factory.deferred.addCallback(self.set_poem)
         from twisted.internet import reactor
-
         reactor.connectTCP(self.host, self.port, factory)  # 代理创建到诗歌服务器的连接
         return factory.deferred
 
@@ -130,10 +132,11 @@ def main():
 
     service = ProxyService(*server_addr)
 
-    factory = PoetryProxyFactory(service)
+    factory = PoetryProxyFactory(service) # 这一个代理协议工厂
 
     from twisted.internet import reactor
 
+    # 接下来开启代理服务器，使用了代理协议工厂
     port = reactor.listenTCP(options.port or 0, factory, interface=options.iface)
 
     print "Proxying %s on %s." % (server_addr, port.getHost())
