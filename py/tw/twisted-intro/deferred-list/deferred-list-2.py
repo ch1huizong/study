@@ -10,6 +10,7 @@ def got_results(res):
 print "One Deferred."
 d1 = defer.Deferred()
 d = defer.DeferredList([d1])
+
 print "Adding Callback."
 d.addCallback(got_results)
 print "Firing d1."

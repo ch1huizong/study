@@ -186,7 +186,7 @@ def poetry_main():
         ds.append(d)
 
     dlist = defer.DeferredList(ds, consumeErrors=True)  # 感觉类似defer池?
-    dlist.addCallback(lambda res: reactor.stop())
+    dlist.addCallback(lambda res: reactor.stop())  # 简洁好多啊
 
     reactor.run()
 

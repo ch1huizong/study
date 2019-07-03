@@ -11,5 +11,5 @@ def my_generator():
     print "done"
 
 
-for n in my_generator():
+for n in my_generator(): # 自己处理的迭代异常了
     print n

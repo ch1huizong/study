@@ -183,12 +183,13 @@ def poetry_main():
     def poem_done(_):
         results.append(_)
         if len(results) == len(addresses):
+            print(results)
             reactor.stop()
 
     for address in addresses:
         host, port = address
         d = get_transformed_poem(host, port)
-        d.addCallbacks(got_poem)
+        d.addCallbacks(got_poem) # 注意一下这里，errback为None
         d.addBoth(poem_done)
 
     reactor.run()

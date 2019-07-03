@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 诗歌代理，增加了取消操作, 有点难度
 # This is the Twisted Poetry Proxy, version 3.0
 
 import optparse
@@ -117,10 +118,11 @@ class ProxyService(object):
             # return an already-fired deferred
             return succeed(self.poem)
 
+        # 注意这个，增加了canceler
         def canceler(d):
             print "Canceling poem download."
-            factory.deferred = None
-            connector.disconnect()
+            factory.deferred = None # 注意这里
+            connector.disconnect() # 清理操作
 
         print "Fetching poem from server."
         deferred = Deferred(canceler)

@@ -12,7 +12,7 @@ def get_poem():
 
     def canceler(d):
         # They don't want the poem anymore, so cancel the delayed call
-        delayed_call.cancel()  # 延时调用取消了
+        delayed_call.cancel()  # 延时调用取消了(抽象，应该是链接清理部分)
 
         # At this point we have three choices:
         #   1. Do nothing, and the deferred will fire the errback

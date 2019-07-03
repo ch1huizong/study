@@ -10,8 +10,10 @@ print "Two Deferreds."
 d1 = defer.Deferred()
 d2 = defer.Deferred()
 d = defer.DeferredList([d1, d2])
+
 print "Adding Callback."
 d.addCallback(got_results)
+
 print "Firing d1."
 d1.callback("d1 result")
 print "Firing d2."
