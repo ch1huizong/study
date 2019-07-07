@@ -1,12 +1,11 @@
 #! /usr/bin/env python
-# -*- coding:UTF-8 -*-
+# -*- coding:utf-8 -*-
 
 from twisted.internet import reactor, protocol, endpoints
 from twisted.protocols import basic
 
 
 class PubProtocol(basic.LineReceiver):
-
     def __init__(self, factory):
         self.factory = factory
 
@@ -23,7 +22,6 @@ class PubProtocol(basic.LineReceiver):
 
 
 class PubFactory(protocol.Factory):
-
     def __init__(self):
         self.clients = set()
 

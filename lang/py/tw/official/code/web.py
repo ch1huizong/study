@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# -*- coding:UTF-8 -*-
+# -*- coding:utf-8 -*-
 
 from twisted.web import server, resource
 from twisted.internet import reactor, endpoints
@@ -16,5 +16,5 @@ class Counter(resource.Resource):
         return content.encode("ascii")
 
 
-endpoints.serverFromString(reactor, "tcp:8080").listen(server.Site(Counter()))
+endpoints.serverFromString(reactor, "tcp:8888").listen(server.Site(Counter()))
 reactor.run()
