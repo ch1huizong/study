@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *add(int *a, int *b) {
+    int *c = (int *)malloc(sizeof(int));
+    *c = (*a) + (*b);
+    return c;
+}
+
+int main(int argc, char *argv[]) {
+    getchar();
+
+    int a = 10, b = 20;
+    int *c = add(&a, &b);
+
+    printf("sum = %d\n", *c);
+
+    return 0;
+}

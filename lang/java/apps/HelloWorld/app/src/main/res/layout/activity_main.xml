@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dip"
+        android:background="#6699FF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!--
+          Use layout_weight to stretch the EditText and compress the button.
+          To avoid text wrap, the editable text is forced to occupy only one
+          line
+        -->
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/twitter_t_logo"></ImageView>
+
+        <EditText
+            android:id="@+id/search_key"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:ellipsize="middle"
+            android:hint="@string/hint"
+            android:lines="1"
+            android:maxLines="1"
+            android:typeface="normal"></EditText>
+
+        <ImageButton
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_menu_search"></ImageButton>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tweet_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#3366CC"
+        android:gravity="right"
+        android:paddingRight="4dp"
+        android:textColor="#000000"
+        android:textSize="5dp"></TextView>
+
+
+    <ListView
+        android:id="@+id/tweet_list"
+        android:layout_width="wrap_content"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:smoothScrollbar="false"></ListView>
+
+</LinearLayout>

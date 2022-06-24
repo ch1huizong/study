@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Workshop</string>
+    <string name="search_msg">Searching for</string>
+    <string name="hint">Twitter search</string>
+    <string name="ok">OK</string>
+    <string name="exit">Exit</string>
+</resources>
