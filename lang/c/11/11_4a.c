@@ -1,5 +1,5 @@
-#include <stdio.h>
 // T: 结构的输入
+#include <stdio.h>
 
 struct date {
     int month;
@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     printf("Enter today's date (mm dd yyyy): ");
     scanf("%i %i %i", &today.month, &today.day, &today.year);
 
-    if (today.day != numberOfDays(today)) { // 是否是一个月最后一天
+    if (today.day != numberOfDays(today)) {  // 是否是一个月最后一天?
         tomorrow.day = today.day + 1;
         tomorrow.month = today.month;
         tomorrow.year = today.year;
@@ -35,15 +35,6 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-int isLeap(struct date d) {
-    int leap = 0;
-    if ((d.year % 4 == 0 && d.year % 100 != 0) || d.year % 400 == 0) {
-        leap = 1;
-    }
-
-    return leap;
-}
-
 int numberOfDays(struct date d) {
     int days;
     const int daysPerMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -55,4 +46,13 @@ int numberOfDays(struct date d) {
     }
 
     return days;
+}
+
+int isLeap(struct date d) {
+    int leap = 0;
+    if ((d.year % 4 == 0 && d.year % 100 != 0) || d.year % 400 == 0) {
+        leap = 1;
+    }
+
+    return leap;
 }

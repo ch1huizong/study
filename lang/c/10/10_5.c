@@ -25,7 +25,7 @@ char *mycpy2(char *dst, const char *src) {
 
 int main(int argc, char *argv[]) {
     char s1[] = "hello world";
-    char s2[strlen(s1) + 1]; // 这里提前计算空间了
+    char s2[strlen(s1) + 1];  // 这里提前计算空间了
     // mycpy1(s2, s1);
     mycpy2(s2, s1);
 

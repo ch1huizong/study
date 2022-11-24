@@ -1,5 +1,5 @@
+// T: 结构体数组
 #include <stdio.h>
-// T: 结构数组
 
 struct time {
     int hour;
@@ -16,7 +16,6 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < 5; ++i) {
         printf("Time is %.2i:%.2i:%.2i\n", times[i].hour, times[i].minutes, times[i].seconds);
-
         times[i] = timeUpdate(times[i]);
         printf("... one second later it is %.2i:%.2i:%.2i\n", times[i].hour, times[i].minutes, times[i].seconds);
     }
@@ -30,11 +29,9 @@ struct time timeUpdate(struct time now) {
     if (now.seconds == 60) {
         now.seconds = 0;
         ++now.minutes;
-
         if (now.minutes == 60) {
             now.minutes = 0;
             ++now.hour;
-
             if (now.hour == 24) {
                 now.hour = 0;
             }

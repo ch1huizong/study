@@ -9,11 +9,11 @@ int main(int argc, char *argv[]) {
     printf("\n");
 
     printf("右移:\n");
-    printf("a>>1 = %d\n", a >> 1); // 有符号位右移保持符号位不变
+    printf("a>>1 = %d\n", a >> 1);  // 有符号位右移保持符号位不变
     printf("b>>1 = %u\n", b >> 1);
     printf("\n");
 
-    printf("左移:\n"); // 空位填0
+    printf("左移:\n");  // 空位填0
     printf("a<<1 = %d\n", a << 1);
     printf("b<<1 = %u\n", b << 1);
 

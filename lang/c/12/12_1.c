@@ -3,7 +3,7 @@
 
 int f(void);
 
-int gAll = 12; // 全局变量的初始化
+int gAll = 12;  // 全局变量的初始化
 
 int main(int argc, char *argv[]) {
     printf("in %s gAll = %d\n", __func__, gAll);
@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 }
 
 int f(void) {
-    int gAll = 1; // 本地变量隐藏全局变量
+    int gAll = 1;  // 本地变量隐藏全局变量
 
     printf("in %s gAll = %d\n", __func__, gAll);
     gAll += 2;

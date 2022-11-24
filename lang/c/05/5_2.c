@@ -4,7 +4,7 @@
 int main(int argc, char *argv[]) {
     int x;
     scanf("%d", &x);
-    int isPrime = 1; // 假设x是素数
+    int isPrime = 1;  // 假设x是素数
 
     for (int i = 2; i < x; ++i) {
         if (x % i == 0) {

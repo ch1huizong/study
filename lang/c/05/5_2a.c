@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     while (count < N) {
         isPrime = 1;
 
-        for (int i = 2; i < x; ++i) { // 判断x是否是素数
+        for (int i = 2; i < x; ++i) {  // 判断x是否是素数
             if (x % i == 0) {
                 isPrime = 0;
                 break;
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
                 printf("\n");
             }
         }
-        x++; // 下一个数
+        x++;  // 下一个数
     }
 
     return 0;

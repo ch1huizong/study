@@ -4,15 +4,15 @@
 int isPrime(int x, int knownPrimes[], int length);
 
 int main(int argc, char *argv[]) {
-    const int number = 100; // 素数表容量
+    const int number = 100;  // 素数表容量
     int prime[number];
     int count = 1;
-    int i = 3; // 起始值，可以自定义
+    int i = 3;  // 起始值，可以自定义
 
     prime[0] = 2;
     while (count < number) {
-        if (isPrime(i, prime, count)) { // 以已知的来做判断
-            prime[count++] = i;         // 更新prime
+        if (isPrime(i, prime, count)) {  // 以已知的来做判断
+            prime[count++] = i;          // 更新prime
         }
         i++;
     }

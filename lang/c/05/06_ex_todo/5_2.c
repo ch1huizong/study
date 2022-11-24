@@ -6,15 +6,15 @@ int main(int argc, char *argv[]) {
     int n;
     scanf("%d", &n);
 
-    int first = 1; // 寻找起点
+    int first = 1;  // 寻找起点
     for (int i = 1; i < n; ++i) {
         first *= 10;
     }
 
-    for (int i = first; i < first * 10; ++i) { // n位数范围
+    for (int i = first; i < first * 10; ++i) {  // n位数范围
         int t = i;
         int sum = 0;
-        while (t > 0) { // 分解整数
+        while (t > 0) {  // 分解整数
             int d = t % 10;
             sum += pown(d, n);
             t /= 10;
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-int pown(int x, int n) { // x ** n
+int pown(int x, int n) {  // x ** n
     int p = 1;
     for (int i = 0; i < n; ++i) {
         p *= x;

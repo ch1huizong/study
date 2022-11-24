@@ -5,10 +5,10 @@
 int main(int argc, char *argv[]) {
     char s[] = "hello";
     char *p = strchr(s, 'l');
-    p = strchr(p + 1, 'l'); // 寻找第二个'l'字符
+    p = strchr(p + 1, 'l');  // 寻找第二个'l'字符
     printf("%s\n", p);
 
-    char s1[] = "hello"; // 寻找第一个'l'前面的字符串
+    char s1[] = "hello";  // 寻找第一个'l'前面的字符串
     char *p1 = strchr(s1, 'l');
     char c = *p1;
     *p1 = '\0';

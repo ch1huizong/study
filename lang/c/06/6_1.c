@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     printf("sizeof(double) = %ld\n", sizeof(double));
     printf("sizeof(long double) = %ld\n", sizeof(long double));
 
-    printf("sizeof(a++) = %ld\n", sizeof(a++)); // sizeof静态编译
+    printf("sizeof(a++) = %ld\n", sizeof(a++));  // sizeof静态编译
     printf("a = %d\n", a);
 
     return 0;

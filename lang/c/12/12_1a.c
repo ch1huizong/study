@@ -14,12 +14,12 @@ int main(int argc, char *argv[]) {
 }
 
 int f(void) {
-    static int all = 1; // 只初始化一次
+    static int all = 1;  // 只初始化一次
 
-    //int k = 0;
-    //printf("&gAll = %p\n", &gAll);
-    //printf("&all = %p\n", &all); // 和all处相同的内存区域
-    //printf("&k = %p\n", &k);
+    // int k = 0;
+    // printf("&gAll = %p\n", &gAll);
+    // printf("&all = %p\n", &all); // 和all处相同的内存区域
+    // printf("&k = %p\n", &k);
 
     printf("in %s all = %d\n", __func__, all);
     all += 2;

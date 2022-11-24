@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
         scanf("%d", &size);
     } while (size < 0 || size > MAX_SIZE);
 
-    int *a = (int *)malloc(size * sizeof(int)); // 主函数里面分配的地址
+    int *a = (int *)malloc(size * sizeof(int));  // 主函数里面分配的地址
     print(init(a, size), size);
     free(a);
 

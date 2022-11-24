@@ -23,7 +23,7 @@ int isPrime(int x) {
         ret = 0;
     }
 
-    for (int i = 3; i < sqrt(x); i += 2) { // 再从奇数中判断, 不正确？
+    for (int i = 3; i < sqrt(x); i += 2) {  // 再从奇数中判断, 不正确？
         if (x % i == 0) {
             ret = 0;
             break;

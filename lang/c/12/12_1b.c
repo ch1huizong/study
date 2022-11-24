@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
 int *f(void) {
     int i = 12;
-    return &i; // i消失， i占用的内存空间不受控制了
+    return &i;  // i消失， i占用的内存空间不受控制了
 }
 
 void g(void) {

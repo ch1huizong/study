@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     } while (x > 0);
     x = t;
 
-    do { // 逆序输出整数数字
+    do {  // 逆序输出整数数字
         d = x % 10;
         printf("%d", d);
         if (x > 9) {

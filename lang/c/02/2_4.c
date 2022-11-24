@@ -4,7 +4,7 @@
 int main(int argc, char *argv[]) {
     int a = 10;
 
-    printf("a++ = %d\n", a++); // 表达式的值
+    printf("a++ = %d\n", a++);  // 表达式的值
     printf("a = %d\n", a);
 
     printf("++a = %d\n", ++a);

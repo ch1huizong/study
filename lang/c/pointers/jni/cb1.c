@@ -3,7 +3,7 @@
 
 // 自定义比较规则或排名机制
 int compare(int a, int b) {
-    if (a > b) { // a的得分就高了
+    if (a > b) {  // a的得分就高了
         return 1;
     }
     return -1;

@@ -1,5 +1,6 @@
+// T: union的应用 - 换一种视角来访问数据
+
 #include <stdio.h>
-// T: union的应用
 
 typedef union {
     int i;
@@ -8,7 +9,7 @@ typedef union {
 
 int main(int argc, char *argv[]) {
     CHI chi;
-    chi.i = 1234; // 这里小端存储
+    chi.i = 1234;  // 这里小端存储
 
     for (int i = 0; i < sizeof(int); ++i) {
         printf("%02hhX", chi.ch[i]);

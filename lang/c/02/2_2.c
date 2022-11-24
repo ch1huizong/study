@@ -2,7 +2,9 @@
 // T: 身高计算
 
 int main(int argc, char *argv[]) {
-    printf("请分别输入身高的英尺和英寸,""如输入\"5 7\"表示5英尺7英寸: ");
+    printf(
+        "请分别输入身高的英尺和英寸,"
+        "如输入\"5 7\"表示5英尺7英寸: ");
 
     double foot, inch;
     scanf("%lf %lf", &foot, &inch);

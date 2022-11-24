@@ -1,6 +1,8 @@
-#include <stdio.h>
 // T: 直接使用枚举量
+#include <stdio.h>
 
+// 本质是对RED等符号和int值绑定
+// 此时符号就可以全局引用了
 enum COLOR { RED, YELLOW, GREEN };
 
 int main(int argc, char *argv[]) {
@@ -11,18 +13,18 @@ int main(int argc, char *argv[]) {
     scanf("%d", &color);
 
     switch (color) {
-    case RED:
-        colorName = "red";
-        break;
-    case YELLOW:
-        colorName = "yellow";
-        break;
-    case GREEN:
-        colorName = "green";
-        break;
-    default:
-        colorName = "unknown";
-        break;
+        case RED:
+            colorName = "red";
+            break;
+        case YELLOW:
+            colorName = "yellow";
+            break;
+        case GREEN:
+            colorName = "green";
+            break;
+        default:
+            colorName = "unknown";
+            break;
     }
     printf("你喜欢的颜色: %s\n", colorName);
 

@@ -1,11 +1,11 @@
-#include <stdio.h>
 // T: 自动计数的枚举
+#include <stdio.h>
 
-enum COLOR { RED, YELLOW, GREEN, NumCOLORS };
+enum COLOR { RED, YELLOW, GREEN, NumCOLORS }; // NumCOLORS记录了有多少枚举量
 
 int main(int argc, char *argv[]) {
     int color = -1;
-    char *ColorNames[NumCOLORS] = {
+    char *ColorNames[NumCOLORS] = { // 自己建立对应关系
         "red",
         "yellow",
         "green",

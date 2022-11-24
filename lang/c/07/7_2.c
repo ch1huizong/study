@@ -1,7 +1,7 @@
 #include <stdio.h>
 // T: 求和
 
-void sum(int, int); // 函数原型声明
+void sum(int, int);  // 函数原型声明
 
 int main(int argc, char *argv[]) {
     sum(1, 10);
