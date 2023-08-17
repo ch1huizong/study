@@ -1,0 +1,177 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	basic2_static_single.cpp	/^		A(const A& rhs){};$/;"	f	class:A	file:
+A	basic2_static_single.cpp	/^		A(int a = 18, int s = 1024) : age(a), salary(s) {$/;"	f	class:A	file:
+A	basic2_static_single.cpp	/^class A {$/;"	c	file:
+A	basic4_virtual_model.cpp	/^class A {$/;"	c	file:
+ASIZE	std_main.cpp	10;"	d	file:
+Account	basic2_static.cpp	/^class Account {$/;"	c	file:
+B	basic4_virtual_model.cpp	/^class B : public A {$/;"	c	file:
+C	basic4_virtual_model.cpp	/^class C : public B {$/;"	c	file:
+Fraction	basic3_new.cpp	/^		explicit Fraction(int num, int den = 1) : m_num(num), m_den(den) {}$/;"	f	class:Fraction
+Fraction	basic3_new.cpp	/^class Fraction {$/;"	c	file:
+Framework	basic4_virtual_model_2.cpp	/^class Framework {$/;"	c	file:
+I	01_initial_list_cpp11.cpp	/^auto I = [](int x) -> bool { return false; };$/;"	v
+I	02_lambda_cpp11.cpp	/^auto I = [] { std::cout << "hello lambda!" << std::endl; };$/;"	v
+I2	02_lambda_cpp11.cpp	/^void I2() {$/;"	f
+I3	02_lambda_cpp11.cpp	/^void I3() {$/;"	f
+I4	02_lambda_cpp11.cpp	/^void I4() {$/;"	f
+MyDoc	basic4_virtual_model_2.cpp	/^class MyDoc : public Framework {$/;"	c	file:
+OnFileOpen	basic4_virtual_model_2.cpp	/^void Framework::OnFileOpen() {$/;"	f	class:Framework
+P	01_initial_list_cpp11.cpp	/^		P(int a, int b) {$/;"	f	class:P
+P	01_initial_list_cpp11.cpp	/^		P(std::initializer_list<int> initlist) {  \/\/ 直接使用$/;"	f	class:P
+P	01_initial_list_cpp11.cpp	/^		explicit P(int a, int b, int c) {$/;"	f	class:P
+P	01_initial_list_cpp11.cpp	/^class P {$/;"	c	file:
+PRINT_TUPLE	T3_print.cpp	/^struct PRINT_TUPLE {$/;"	s	file:
+PRINT_TUPLE	T3_print.cpp	/^struct PRINT_TUPLE<MAX, MAX, Args...> {  \/\/ 模板特化, 注意排列顺序$/;"	s	file:
+Person	02_lambda_cpp11.cpp	/^		Person(const char* first, const char* last) : firstname(first), lastname(last){};$/;"	f	class:Person
+Person	02_lambda_cpp11.cpp	/^class Person {$/;"	c	file:
+Person	T4_others.cpp	/^class Person {$/;"	c	file:
+Screen	advanced1_mempool.cpp	/^    Screen (int x): i(x) {};$/;"	f	class:Screen
+Screen	advanced1_mempool.cpp	/^class Screen$/;"	c	file:
+Serialize	basic4_virtual_model_2.cpp	/^		virtual void Serialize() {$/;"	f	class:MyDoc
+Serialize	basic4_virtual_model_2.cpp	/^		virtual void Serialize(){};	 \/\/ 必须这样写吗? 是的!$/;"	f	class:Framework
+String	basic2_string.cpp	/^class String {$/;"	c	file:
+String	basic2_string.cpp	/^inline String::String(const String& str) {$/;"	f	class:String
+String	basic2_string.cpp	/^inline String::String(const char* cstr) {$/;"	f	class:String
+Tup1	T3_print.cpp	/^    Tup1() {}$/;"	f	class:Tup1
+Tup1	T3_print.cpp	/^    Tup1(Head v, Tail... vtail) : m_head(v), inherited(vtail...) {}$/;"	f	class:Tup1
+Tup1	T3_print.cpp	/^class Tup1<Head, Tail...> : private Tup1<Tail...> { \/\/ 特化，拆分$/;"	c	file:
+Tup1	T3_print.cpp	/^template <> class Tup1<> {};$/;"	c	file:
+Tup2	T3_print.cpp	/^    Tup2() {}$/;"	f	class:Tup2
+Tup2	T3_print.cpp	/^    Tup2(Head v, Tail... vtail) : m_head(v), m_tail(vtail...) {}$/;"	f	class:Tup2
+Tup2	T3_print.cpp	/^class Tup2<Head, Tail...> {$/;"	c	file:
+Tup2	T3_print.cpp	/^template <> class Tup2<> {};$/;"	c	file:
+__COMPLEX__	basic1_complex.cpp	4;"	d	file:
+__MYSTRING__	basic2_string.cpp	4;"	d	file:
+__complex__	T1_complex.cpp	4;"	d	file:
+__doapl	basic1_complex.cpp	/^inline complex& __doapl(complex* ths, const complex& r) {$/;"	f
+_h	T2_stone.cpp	/^		int _w, _h, _weight;$/;"	m	class:stone	file:
+_w	T2_stone.cpp	/^		int _w, _h, _weight;$/;"	m	class:stone	file:
+_weight	T2_stone.cpp	/^		int _w, _h, _weight;$/;"	m	class:stone	file:
+age	basic2_static_single.cpp	/^		int age, salary;$/;"	m	class:A	file:
+cmp	T4_others.cpp	/^auto cmp = [](const Person& p1, const Person& p2) {$/;"	v
+compareLongs	std_main.cpp	/^int compareLongs(const void* a, const void* b) {$/;"	f
+compareStrings	std_main.cpp	/^int compareStrings(const void* a, const void* b) {$/;"	f
+complex	T1_complex.cpp	/^		complex(T r = 0, T i = 0) : re(r), im(i) {}$/;"	f	class:complex
+complex	T1_complex.cpp	/^class complex {$/;"	c	file:
+complex	basic1_complex.cpp	/^		complex(double r = 0, double i = 0) : re(r), im(i) {}$/;"	f	class:complex
+complex	basic1_complex.cpp	/^class complex {$/;"	c	file:
+composited	T3_print.cpp	/^    typedef Tup2<Tail...> composited;$/;"	t	class:Tup2	file:
+conj	basic1_complex.cpp	/^inline complex conj(const complex& x) { return complex(real(x), -imag(x)); }$/;"	f
+d1	basic4_virtual_model.cpp	/^		int d1, d2;$/;"	m	class:A	file:
+d1	basic4_virtual_model.cpp	/^		int d1, d4;$/;"	m	class:C	file:
+d2	basic4_virtual_model.cpp	/^		int d1, d2;$/;"	m	class:A	file:
+d3	basic4_virtual_model.cpp	/^		int d3;$/;"	m	class:B	file:
+d4	basic4_virtual_model.cpp	/^		int d1, d4;$/;"	m	class:C	file:
+data1	basic4_virtual_model_2.cpp	/^		int data1;$/;"	m	class:Framework	file:
+data2	basic4_virtual_model_2.cpp	/^		int data2;$/;"	m	class:MyDoc	file:
+firstname	02_lambda_cpp11.cpp	/^		std::string firstname, lastname;$/;"	m	class:Person	file:
+firstname	T4_others.cpp	/^    char* firstname;$/;"	m	class:Person	file:
+freeStore	advanced1_mempool.cpp	/^    static Screen* freeStore; \/\/ next$/;"	m	class:Screen	file:
+freeStore	advanced1_mempool.cpp	/^Screen* Screen::freeStore = 0;$/;"	m	class:Screen	file:
+func	basic1_complex.cpp	/^		int func(const complex& param) {$/;"	f	class:complex
+get	advanced1_mempool.cpp	/^    int get() { return i; }$/;"	f	class:Screen
+getInstance	basic2_static_single.cpp	/^A& A::getInstance() {$/;"	f	class:A
+get_a_target_long	std_main.cpp	/^long get_a_target_long() {$/;"	f
+get_a_target_string	std_main.cpp	/^string get_a_target_string() {$/;"	f
+get_c_str	basic2_string.cpp	/^		char* get_c_str() const { return m_data; }$/;"	f	class:String
+head	T3_print.cpp	/^    Head head() { return m_head; }$/;"	f	class:Tup1
+head	T3_print.cpp	/^    Head head() { return m_head; }$/;"	f	class:Tup2
+i	advanced1_mempool.cpp	/^    int i;$/;"	m	class:Screen	file:
+im	T1_complex.cpp	/^		T re, im;$/;"	m	class:complex	file:
+im	basic1_complex.cpp	/^		double re, im;$/;"	m	class:complex	file:
+imag	T1_complex.cpp	/^		T imag() const { return im; }$/;"	f	class:complex
+imag	basic1_complex.cpp	/^		double imag() const { return im; }$/;"	f	class:complex
+imag	basic1_complex.cpp	/^inline double imag(const complex& x) { return x.imag(); }$/;"	f
+inherited	T3_print.cpp	/^    typedef Tup1<Tail...> inherited;$/;"	t	class:Tup1	file:
+lastname	02_lambda_cpp11.cpp	/^		std::string firstname, lastname;$/;"	m	class:Person	file:
+lastname	T4_others.cpp	/^    char* lastname;$/;"	m	class:Person	file:
+lesser	T3_print.cpp	/^struct lesser {  \/\/ 把比较操作函数包装成对象了$/;"	s	file:
+m_data	basic2_string.cpp	/^		char* m_data;$/;"	m	class:String	file:
+m_data	basic2_string.cpp	/^inline String::String(const String&& str) noexcept : m_data(str.m_data)  {$/;"	f
+m_den	basic3_new.cpp	/^		int m_den;	\/\/ 分母$/;"	m	class:Fraction	file:
+m_head	T3_print.cpp	/^    Head m_head;$/;"	m	class:Tup1	file:
+m_head	T3_print.cpp	/^    Head m_head;$/;"	m	class:Tup2	file:
+m_num	basic3_new.cpp	/^		int m_num;	\/\/ 分子$/;"	m	class:Fraction	file:
+m_rate	basic2_static.cpp	/^		static double m_rate;$/;"	m	class:Account	file:
+m_rate	basic2_static.cpp	/^double Account::m_rate = 8.0;  \/\/ 一定要在外部定义$/;"	m	class:Account	file:
+m_tail	T3_print.cpp	/^    composited m_tail;$/;"	m	class:Tup2	file:
+main	01_initial_list_cpp11.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	02_lambda_cpp11.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	T1_complex.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	T2_stone.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	T3_print.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	T4_others.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	advanced1_mempool.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	basic1_complex.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	basic2_static.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	basic2_static_single.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	basic2_string.cpp	/^int main(void) {$/;"	f
+main	basic3_new.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	basic4_virtual_model.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	basic4_virtual_model_2.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	std_01.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	std_main.cpp	/^int main(int argc, char *argv[])$/;"	f
+max	T3_print.cpp	/^inline T max(std::initializer_list<T> l) {$/;"	f
+max1	T3_print.cpp	/^int max1(int n) { return n; }$/;"	f
+max1	T3_print.cpp	/^int max1(int n, Types... args) {$/;"	f
+max_element	T3_print.cpp	/^inline It max_element(It first, It last) {$/;"	f
+max_element	T3_print.cpp	/^inline It max_element(It first, It last, Compare comp) {$/;"	f
+min	T2_stone.cpp	/^inline const T& min(const T& a, const T& b) {$/;"	f
+next	advanced1_mempool.cpp	/^    Screen* next;$/;"	m	class:Screen	file:
+noexcept	basic2_string.cpp	/^        String& operator= (const String&& str) noexcept;$/;"	m	class:String	file:
+noexcept	basic2_string.cpp	/^        String(const String&& str) noexcept; \/\/ 移动构造$/;"	m	class:String	file:
+operator !=	basic1_complex.cpp	/^inline bool operator!= (const complex& x, const complex& y) {$/;"	f
+operator !=	basic1_complex.cpp	/^inline bool operator!= (const complex& x, double y) {$/;"	f
+operator !=	basic1_complex.cpp	/^inline bool operator!= (double x, const complex& y) {$/;"	f
+operator ()	T3_print.cpp	/^    bool operator()(It1 it1, It2 it2) const {$/;"	f	struct:lesser
+operator +	basic1_complex.cpp	/^inline complex operator+ (const complex& x) { return x; }$/;"	f
+operator +	basic1_complex.cpp	/^inline complex operator+ (const complex& x, const complex& y) {$/;"	f
+operator +	basic1_complex.cpp	/^inline complex operator+ (const complex& x, double y) {$/;"	f
+operator +	basic1_complex.cpp	/^inline complex operator+ (double x, const complex& y) {$/;"	f
+operator +	basic3_new.cpp	/^		Fraction operator+ (const Fraction &f) {$/;"	f	class:Fraction
+operator +=	basic1_complex.cpp	/^inline complex& complex::operator+=(const complex& r) {$/;"	f	class:complex
+operator -	basic1_complex.cpp	/^inline complex operator- (const complex& x) { return complex(-real(x), -imag(x)); }$/;"	f
+operator <	T2_stone.cpp	/^		bool operator< (const stone& rhs) const { return _w < rhs._w; }$/;"	f	class:stone
+operator <<	T3_print.cpp	/^std::ostream& operator<<(std::ostream& os, const std::tuple<Args...>& t) {$/;"	f
+operator <<	basic1_complex.cpp	/^inline std::ostream& operator<< (std::ostream& os, const complex& x) {$/;"	f
+operator <<	basic2_string.cpp	/^std::ostream& operator<< (std::ostream& os, const String& str) {$/;"	f
+operator =	basic2_string.cpp	/^inline String& String::operator= (const String& str) {$/;"	f	class:String
+operator ==	basic1_complex.cpp	/^inline bool operator== (const complex& x, const complex& y) {$/;"	f
+operator ==	basic1_complex.cpp	/^inline bool operator== (const complex& x, double y) {$/;"	f
+operator ==	basic1_complex.cpp	/^inline bool operator== (double x, const complex& y) {$/;"	f
+operator delete	advanced1_mempool.cpp	/^void Screen::operator delete(void* p, size_t) {$/;"	f	class:Screen
+operator new	advanced1_mempool.cpp	/^void* Screen::operator new(size_t size) {$/;"	f	class:Screen
+print	01_initial_list_cpp11.cpp	/^void print(std::initializer_list<int> vals) {$/;"	f
+print	T3_print.cpp	/^    static void print(std::ostream& os, const std::tuple<Args...>& t) {$/;"	f	struct:PRINT_TUPLE
+print	T3_print.cpp	/^    static void print(std::ostream& os, const std::tuple<Args...>& t){};$/;"	f	struct:PRINT_TUPLE
+print	T3_print.cpp	/^void print() {}$/;"	f
+print	T3_print.cpp	/^void print(const T& firstArg, const Types&... args) {  \/\/ 2$/;"	f
+print1	01_initial_list_cpp11.cpp	/^void print1(const T& coll) {	  \/\/ 如何构造一个T类型的coll?$/;"	f
+printfx	T3_print.cpp	/^void printfx(const char* s) {$/;"	f
+printfx	T3_print.cpp	/^void printfx(const char* s, T value, Args... args) {  \/\/ 注意拆分规则$/;"	f
+re	T1_complex.cpp	/^		T re, im;$/;"	m	class:complex	file:
+re	basic1_complex.cpp	/^		double re, im;$/;"	m	class:complex	file:
+real	T1_complex.cpp	/^		T real() const { return re; }$/;"	f	class:complex
+real	basic1_complex.cpp	/^		double real() const { return re; }$/;"	f	class:complex
+real	basic1_complex.cpp	/^inline double real(const complex& x) { return x.real(); }$/;"	f
+salary	basic2_static_single.cpp	/^		int age, salary;$/;"	m	class:A	file:
+screenChunk	advanced1_mempool.cpp	/^    static const int screenChunk; \/\/ elements, 总共多少块$/;"	m	class:Screen	file:
+screenChunk	advanced1_mempool.cpp	/^const int Screen::screenChunk = 24;$/;"	m	class:Screen	file:
+set_rate	basic2_static.cpp	/^		static void set_rate(const double& x) { m_rate = x; }$/;"	f	class:Account
+setup	basic2_static_single.cpp	/^		void setup() { std::cout << "建立一个A单例" << std::endl; }$/;"	f	class:A
+stone	T2_stone.cpp	/^		stone(int w = 0, int h = 0, int we = 0) : _w(w), _h(h), _weight(we) {}$/;"	f	class:stone
+stone	T2_stone.cpp	/^class stone {$/;"	c	file:
+tail	T3_print.cpp	/^    composited& tail() { return m_tail; }$/;"	f	class:Tup2
+tail	T3_print.cpp	/^    inherited& tail() { return *this; }$/;"	f	class:Tup1
+test_array	std_main.cpp	/^void test_array() {$/;"	f
+vf1	basic4_virtual_model.cpp	/^		virtual void vf1() { std::cout << "IN A vf1" << std::endl; }$/;"	f	class:A
+vf1	basic4_virtual_model.cpp	/^		virtual void vf1() { std::cout << "IN B vf1" << std::endl; }$/;"	f	class:B
+vf1	basic4_virtual_model.cpp	/^		virtual void vf1() { std::cout << "IN C vf1" << std::endl; }$/;"	f	class:C
+vf2	basic4_virtual_model.cpp	/^		virtual void vf2() { std::cout << "A base vf2" << std::endl; }$/;"	f	class:A
+~String	basic2_string.cpp	/^inline String::~String() { delete[] m_data; }$/;"	f	class:String
